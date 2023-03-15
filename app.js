@@ -93,23 +93,32 @@ const words = [
 const longWords = words.filter((word) => word.length > 20);
 
 // finding words that start with letters c & u
-const cWOruWords = words.filter(function(w) {
-  return w[0] === 'u' || w[0] === 'c'
-});
+const cWOruWords = words.filter((w) => w[0] === 'u' || w[0] === 'c');
 
-const containsVowel = function(word) {
-  for (let chr of word) {
+const containsVowel = function (word) {
+  for (const chr of word) {
     if (isVowel(char)) return true;
   }
   return false;
 };
 
-const isVowel = function(char) {
-  return 'aeiou'.indexOf(char) !== -1;
-};
+const isVowel = (char) => 'aeiou'.indexOf(char) !== -1;
 
 const containVowels = words.filter(containsVowel);
 
-const noVowels = words.filter(function(word) {
-  return !containsVowel(word);
-});
+const noVowels = words.filter((word) => !containsVowel(word));
+
+// Applying Filter and Map mto the DOM
+const allCheckboxes = document.querySelectorAll('input[type=checkbox]');
+
+const checked = Array.from(allCheckboxes).filter((box) => box.checcked);
+
+// Get the inner Text of the checked boxes
+const completedItems = checked.map((checkbox) => checkbox.parentElement.innerText);
+
+// Combining the two upper steps
+function extractCompletedTodos() {
+  const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+  return Array.from(allCheckboxes).filter((box) => box.checcked)
+    .checked.map((checkbox) => checkbox.parentElement.innerText);
+}
