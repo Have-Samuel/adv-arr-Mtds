@@ -15,10 +15,11 @@ colors.forEach(colors, (i) => {
   console.log(colors.toUpperCase(), 'at inidex of', i);
 });
 
-// Map
+// Mapping on Numbers
 const numbers = [21, 32, 54, 78, 89, 109];
 const negatives = numbers.map((num) => num * -1);
 
+// Mapping on Strings
 const todos = [
   {
     id: 1,
@@ -42,12 +43,27 @@ const todos = [
   },
 ];
 
-const todoText = todos.map((todo) => {
-  return todo.text;
-});
+const todoText = todos.map((todo) => todo.text);
 
+// Mapping on Links
 const links = Array.from(document.querySelectorAll('a'));
 
-const urls = links.map(function(a) {
-  return a.href;
+const urls = links.map((a) => a.href);
+
+// My own mapping
+function myMap(arr, callback) {
+  const mappedArray = [];
+  for (let i = 0; i < arr.length; i + 1) {
+    const val = callback(arr[i], i, arr);
+    mappedArray.push(val);
+  }
+  return mappedArray;
+}
+
+const priorityMap = myMap(todos, function(todo) {
+  return todo.priority;
+});
+
+const repeatedStrings = myMap(['a', 'b', 'c', 'd', 'e'], function(str, idx) {
+  return str.repeat(idx);
 });
