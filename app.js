@@ -93,4 +93,23 @@ const words = [
 const longWords = words.filter((word) => word.length > 20);
 
 // finding words that start with letters c & u
-const cWOruWords.filter((w) => w[0] === 'u' || w[0] ==='c');
+const cWOruWords = words.filter(function(w) {
+  return w[0] === 'u' || w[0] === 'c'
+});
+
+const containsVowel = function(word) {
+  for (let chr of word) {
+    if (isVowel(char)) return true;
+  }
+  return false;
+};
+
+const isVowel = function(char) {
+  return 'aeiou'.indexOf(char) !== -1;
+};
+
+const containVowels = words.filter(containsVowel);
+
+const noVowels = words.filter(function(word) {
+  return !containsVowel(word);
+});
