@@ -282,3 +282,91 @@ extractFullName([
 
   // ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']
 */
+
+// // FILTER
+// filterByValue
+function filterByValue(arr, key) {
+  return arr.filter(function(val, idx) {
+    return val[key] !== undefined;
+  });
+}
+
+// filterByValue(
+//   [
+//     { first: 'Elie', last: 'Schoppik' },
+//     { first: 'Tim', last: 'Garcia', isCatOwner: true },
+//     { first: 'Matt', last: 'Lane' },
+//     { first: 'Colt', last: 'Steele', isCatOwner: true }
+//   ],
+//   'isCatOwner'
+// );
+
+/*
+    [
+      {first: 'Tim', last:"Garcia", isCatOwner: true},
+      {first: 'Colt', last:"Steele", isCatOwner: true}
+    ]
+  */
+
+// // FIND
+function find(arr, searchValue) {
+  return arr.filter(function(val) {
+    return vaal === searchValue;
+  })[0];
+}
+
+// find([1,2,3,4,5], 3) // 3
+// find([1,2,3,4,5], 10) // undefined
+
+// // FIND IN OBJECT
+function findInObj(arr, key, searchValue) {
+  return arr.filter(function(val) {
+    return val[key] === searchValue;
+  })[0];
+}
+
+// findInObj(
+//   [
+//     {first: 'Elie', last:"Schoppik"},
+//     {first: 'Tim', last:"Garcia", isCatOwner: true},
+//     {first: 'att', last:"Lane"},
+//     {first: 'Colt', last:"Steele", isCatOwner: true}
+//   ],
+//   'isCatOwner',
+//   true
+// )
+
+// {first: 'Tim', last:"Garcia", isCatOwner: true}
+
+// // REMOVE VOWELS
+function removeVowels(str) {
+  const vowels = 'aeiou';
+  return str.toLowercase().split('').filter(function(val) {
+    return vowels.indexOf(val) === -1;
+  }).join('');
+}
+
+// removeVowels('Elie') // ('l')
+// removeVowels('TIM') // ('tm')
+// removeVowels('ZZZZZZ') // ('zzzzzz')
+
+// // DOUBLE ODD NUMBERS => MAP
+// function doubleOddNumbers(arr) {
+//   return arr.filter(function(val) {
+//     return val % 2 !== 0; // odd
+//     }).map(function(val) {
+//       return val * 2;
+//     });
+// }
+
+// // DOUBLE ODD NUMBERS => FILTER
+function doubleOddNumbers(arr) {
+  return arr.filter(function(val) {
+    if (val % 2 !== 0) {
+      return val * 2;
+    }
+  });
+}
+
+// doubleOddNumbers([1,2,3,4,5]) // [2,6,10]
+// doubleOddNumbers([4,4,4,4,4]) // []
