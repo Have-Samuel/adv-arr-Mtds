@@ -69,18 +69,18 @@
 // });
 
 // Filters
-const words = [
-  'immunoelectrophoretically',
-  'rotavator',
-  'tsktsk',
-  'psychophysicotherapeutics',
-  'squirrelled',
-  'crypt',
-  'uncopyrightable',
-  'cysts',
-  'pseudopseudohypoparathyroidism',
-  'unimaginatively',
-];
+// const words = [
+//   'immunoelectrophoretically',
+//   'rotavator',
+//   'tsktsk',
+//   'psychophysicotherapeutics',
+//   'squirrelled',
+//   'crypt',
+//   'uncopyrightable',
+//   'cysts',
+//   'pseudopseudohypoparathyroidism',
+//   'unimaginatively',
+// ];
 
 // Alternative way to write the filter function
 // words.filter((word) => {
@@ -90,56 +90,57 @@ const words = [
 //   return false;
 // });
 
-const longWords = words.filter((word) => word.length > 20);
+// const longWords = words.filter((word) => word.length > 20);
 
-// finding words that start with letters c & u
-const cWOruWords = words.filter((w) => w[0] === 'u' || w[0] === 'c');
+// // finding words that start with letters c & u
+// const cWOruWords = words.filter((w) => w[0] === 'u' || w[0] === 'c');
 
-const containsVowel = function (word) {
-  for (const char of word) {
-    if (isVowel(char)) return true;
-  }
-  return false;
-};
+// const containsVowel = function (word) {
+//   for (const char of word) {
+//     if (isVowel(char)) return true;
+//   }
+//   return false;
+// };
 
-const isVowel = (char) => 'aeiou'.indexOf(char) !== -1;
+// const isVowel = (char) => 'aeiou'.indexOf(char) !== -1;
 
-const containVowels = words.filter(containsVowel);
+// const containVowels = words.filter(containsVowel);
 
-const noVowels = words.filter((word) => !containsVowel(word));
+// const noVowels = words.filter((word) => !containsVowel(word));
 
-// Applying Filter and Map mto the DOM
-const allCheckboxes = document.querySelectorAll('input[type=checkbox]');
+// // Applying Filter and Map mto the DOM
+// const allCheckboxes = document.querySelectorAll('input[type=checkbox]');
 
-const checked = Array.from(allCheckboxes).filter((box) => box.checcked);
+// const checked = Array.from(allCheckboxes).filter((box) => box.checcked);
 
-// Get the inner Text of the checked boxes
-const completedItems = checked.map((checkbox) => checkbox.parentElement.innerText);
+// // Get the inner Text of the checked boxes
+// const completedItems = checked.map((checkbox) => checkbox.parentElement.innerText);
 
-// Combining the two upper steps
-function extractCompletedTodos() {
-  const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-  return Array.from(allCheckboxes).filter((box) => box.checcked)
-    .checked.map((checkbox) => checkbox.parentElement.innerText);
-}
+// // Combining the two upper steps
+// function extractCompletedTodos() {
+//   const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+//   return Array.from(allCheckboxes).filter((box) => box.checcked)
+//     .checked.map((checkbox) => checkbox.parentElement.innerText);
+// }
 
-// Writing Filter
-function myFilter(arr, callback) {
-  const filteredArray = [];
-  for (let i = 0; i < arr.length; i + 1) {
-    if (callback(arr[i], i, arr)) {
-      filteredArray.push(arr[i]);
-    }
-  }
-  return filteredArray;
-}
+// // Writing Filter
+// function myFilter(arr, callback) {
+//   const filteredArray = [];
+//   for (let i = 0; i < arr.length; i + 1) {
+//     if (callback(arr[i], i, arr)) {
+//       filteredArray.push(arr[i]);
+//     }
+//   }
+//   return filteredArray;
+// }
 
-// Let's get short words
-const shorties = myFilter(words, function(word) {
-  return word.length <= 10;
-});
+// // Let's get short words
+// const shorties = myFilter(words, function(word) {
+//   return word.length <= 10;
+// });
 
-// Getting the other words (odd words)
-const everyOtherword = myFilter(words, function(word, i) {
-  return 1 % 2 === 0;
-})
+// // Getting the other words (odd words)
+// const everyOtherword = myFilter(words, function(word, i) {
+//   return 1 % 2 === 0;
+// })
+
