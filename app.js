@@ -337,3 +337,15 @@ function findInObj(arr, key, searchValue) {
 // )
 
 // {first: 'Tim', last:"Garcia", isCatOwner: true}
+
+// // REMOVE VOWELS
+function removeVowels(str) {
+  const vowels = 'aeiou';
+  return str.toLowercase().split('').filter(function(val) {
+    return vowels.indexOf(val) === -1;
+  }).join('');
+}
+
+// removeVowels('Elie') // ('l')
+// removeVowels('TIM') // ('tm')
+// removeVowels('ZZZZZZ') // ('zzzzzz')
