@@ -144,3 +144,12 @@
 //   return 1 % 2 === 0;
 // })
 
+
+// FOR EACH
+function doubleValues(arr) {
+  const newArr = [];
+  arr.forEach(function(num) {
+    newArr.push(num * 2);
+  });
+  return newArr;
+}
