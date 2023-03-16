@@ -182,29 +182,48 @@
 // showFirstAndLast(['hi', 'goodbye', 'smile']) // ['hi', 'ge', 'se']
 
 // // ADD KEY AND VALUE
-function addKeyAndValue(arr, key, value) {
-  arr.forEach((val) => {
-    val[key] = value;
+// function addKeyAndValue(arr, key, value) {
+//   arr.forEach((val) => {
+//     val[key] = value;
+//   });
+//   return arr;
+// }
+
+// addKeyAndValue(
+//   [
+//     { name: 'Elie' },
+//     { name: 'Tim' },
+//     { name: 'Matt' },
+//     { name: 'Colt' },
+//   ],
+//   'title',
+//   'instructor',
+// );
+
+// /*
+//     [
+//       {name: 'Elie', title:'instructor'},
+//       {name: 'Tim', title:'instructor'},
+//       {name: 'Matt', title:'instructor'},
+//       {name: 'Colt', title:'instructor'}
+//     ]
+//   */
+
+// // VOWEL COUNT
+function vowelCount(str) {
+  const splitArr = str.split('');
+  const obj = {};
+  const vowels = 'aeiou';
+
+  splitArr.forEach((letter) => {
+    const lowerCasedLetter = letter.toLowercase();
+    if (vowels.indexOf(lowerCasedLetter) !== -1) {
+      if (obj[lowerCasedLetter]) {
+        obj[lowerCasedLetter]++;
+      } else {
+        obj[lowerCasedLetter] = 1;
+      }
+    }
   });
-  return arr;
+  return obj;
 }
-
-addKeyAndValue(
-  [
-    { name: 'Elie' },
-    { name: 'Tim' },
-    { name: 'Matt' },
-    { name: 'Colt' },
-  ],
-  'title',
-  'instructor',
-);
-
-/*
-    [
-      {name: 'Elie', title:'instructor'},
-      {name: 'Tim', title:'instructor'},
-      {name: 'Matt', title:'instructor'},
-      {name: 'Colt', title:'instructor'}
-    ]
-  */
