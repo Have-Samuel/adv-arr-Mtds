@@ -153,6 +153,9 @@
 //   return newArr;
 // }
 
+// doubleValues([1,2,3]) // [2,4,6]
+// doubleValues([5,1,2,3,10]) // [10,2,4,6,20]
+
 // // ONLY EVEN VALUES
 // function onlyEvenValues(arr) {
 //   const newArr = [];
@@ -164,11 +167,44 @@
 //   return newArr;
 // }
 
+// onlyEvenValues([1,2,3]) // [2]
+// onlyEvenValues([5,1,2,3,10]) // [2,10]
+
 // // SHOW FIRST AND LAST
-function showFirstAndLast(arr) {
-  const newArr = [];
-  arr.forEach(function(num) {
-    arr.push (num[0] + num[num.length - 1]);
+// function showFirstAndLast(arr) {
+//   const newArr = [];
+//   arr.forEach(function(num) {
+//     arr.push (num[0] + num[num.length - 1]);
+//   });
+//   return newArr;
+// }
+// showFirstAndLast(['colt','matt', 'tim', 'test']) // ["ct", "mt", "tm", "tt"]
+// showFirstAndLast(['hi', 'goodbye', 'smile']) // ['hi', 'ge', 'se']
+
+// // ADD KEY AND VALUE
+function addKeyAndValue(arr, key, value) {
+  arr.forEach((val) => {
+    val[key] = value;
   });
-  return newArr;
+  return arr;
 }
+
+addKeyAndValue(
+  [
+    { name: 'Elie' },
+    { name: 'Tim' },
+    { name: 'Matt' },
+    { name: 'Colt' },
+  ],
+  'title',
+  'instructor',
+);
+
+/*
+    [
+      {name: 'Elie', title:'instructor'},
+      {name: 'Tim', title:'instructor'},
+      {name: 'Matt', title:'instructor'},
+      {name: 'Colt', title:'instructor'}
+    ]
+  */
