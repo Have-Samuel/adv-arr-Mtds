@@ -231,10 +231,16 @@ console.log(vowelCount('Have'));
 
 // // MAP
 function doubleValuesWithMap(arr) {
-  return arr.map(function(num) {
-    return num * 2;
-  });
+  return arr.map((num) => num * 2);
 }
 
 // doubleValuesWithMap([1,2,3]) // [2,4,6]
 // doubleValuesWithMap([1,-2,-3]) // [2,-4,-6]
+
+// // VAL TIMES INDEX
+function valTimesIndex(arr) {
+  return arr.map((val, idx) => val * idx);
+}
+
+valTimesIndex([1, 2, 3]); // [0,2,6]
+valTimesIndex([1, -2, -3]); // [0,-2,-6]
