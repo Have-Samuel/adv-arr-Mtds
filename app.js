@@ -244,3 +244,10 @@ function valTimesIndex(arr) {
 
 valTimesIndex([1, 2, 3]); // [0,2,6]
 valTimesIndex([1, -2, -3]); // [0,-2,-6]
+
+// // EXTRACT KEY
+function extractKey(arr, key) {
+  return arr.map(function(val) {
+    return val[key];
+  });
+}
