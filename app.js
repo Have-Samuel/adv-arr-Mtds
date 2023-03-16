@@ -96,7 +96,7 @@ const longWords = words.filter((word) => word.length > 20);
 const cWOruWords = words.filter((w) => w[0] === 'u' || w[0] === 'c');
 
 const containsVowel = function (word) {
-  for (const chr of word) {
+  for (const char of word) {
     if (isVowel(char)) return true;
   }
   return false;
@@ -122,3 +122,24 @@ function extractCompletedTodos() {
   return Array.from(allCheckboxes).filter((box) => box.checcked)
     .checked.map((checkbox) => checkbox.parentElement.innerText);
 }
+
+// Writing Filter
+function myFilter(arr, callback) {
+  const filteredArray = [];
+  for (let i = 0; i < arr.length; i + 1) {
+    if (callback(arr[i], i, arr)) {
+      filteredArray.push(arr[i]);
+    }
+  }
+  return filteredArray;
+}
+
+// Let's get short words
+const shorties = myFilter(words, function(word) {
+  return word.length <= 10;
+});
+
+// Getting the other words (odd words)
+const everyOtherword = myFilter(words, function(word, i) {
+  return 1 % 2 === 0;
+})
