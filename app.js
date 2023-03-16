@@ -145,11 +145,22 @@
 // })
 
 
-// FOR EACH
-function doubleValues(arr) {
+// // FOR EACH
+// function doubleValues(arr) {
+//   const newArr = [];
+//   arr.forEach(function(num) {
+//     newArr.push(num * 2);
+//   });
+//   return newArr;
+// }
+
+// // ONLY EVEN VALUES
+function onlyEvenValues(arr) {
   const newArr = [];
-  arr.forEach(function(num) {
-    newArr.push(num * 2);
+  arr.forEach(function(val) {
+    if (val % 2 === 0) {
+      newArr.push(val);
+    }
   });
   return newArr;
 }
