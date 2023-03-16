@@ -144,7 +144,6 @@
 //   return 1 % 2 === 0;
 // })
 
-
 // // FOR EACH
 // function doubleValues(arr) {
 //   const newArr = [];
@@ -155,12 +154,21 @@
 // }
 
 // // ONLY EVEN VALUES
-function onlyEvenValues(arr) {
+// function onlyEvenValues(arr) {
+//   const newArr = [];
+//   arr.forEach(function(val) {
+//     if (val % 2 === 0) {
+//       newArr.push(val);
+//     }
+//   });
+//   return newArr;
+// }
+
+// // SHOW FIRST AND LAST
+function showFirstAndLast(arr) {
   const newArr = [];
-  arr.forEach(function(val) {
-    if (val % 2 === 0) {
-      newArr.push(val);
-    }
+  arr.forEach(function(num) {
+    arr.push (num[0] + num[num.length - 1]);
   });
   return newArr;
 }
