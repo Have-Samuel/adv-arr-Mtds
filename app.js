@@ -290,3 +290,30 @@ function filterByValue(arr, key) {
     return val[key] !== undefined;
   });
 }
+
+// filterByValue(
+//   [
+//     { first: 'Elie', last: 'Schoppik' },
+//     { first: 'Tim', last: 'Garcia', isCatOwner: true },
+//     { first: 'Matt', last: 'Lane' },
+//     { first: 'Colt', last: 'Steele', isCatOwner: true }
+//   ],
+//   'isCatOwner'
+// );
+
+/*
+    [
+      {first: 'Tim', last:"Garcia", isCatOwner: true},
+      {first: 'Colt', last:"Steele", isCatOwner: true}
+    ]
+  */
+
+// // FIND
+function find(arr, searchValue) {
+  return arr.filter(function(val) {
+    return vaal === searchValue;
+  })[0];
+}
+
+// find([1,2,3,4,5], 3) // 3
+// find([1,2,3,4,5], 10) // undefined
