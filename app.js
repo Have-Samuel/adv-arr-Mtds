@@ -349,3 +349,24 @@ function removeVowels(str) {
 // removeVowels('Elie') // ('l')
 // removeVowels('TIM') // ('tm')
 // removeVowels('ZZZZZZ') // ('zzzzzz')
+
+// // DOUBLE ODD NUMBERS => MAP
+// function doubleOddNumbers(arr) {
+//   return arr.filter(function(val) {
+//     return val % 2 !== 0; // odd
+//     }).map(function(val) {
+//       return val * 2;
+//     });
+// }
+
+// // DOUBLE ODD NUMBERS => FILTER
+function doubleOddNumbers(arr) {
+  return arr.filter(function(val) {
+    if (val % 2 !== 0) {
+      return val * 2;
+    }
+  });
+}
+
+// doubleOddNumbers([1,2,3,4,5]) // [2,6,10]
+// doubleOddNumbers([4,4,4,4,4]) // []
