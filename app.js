@@ -317,3 +317,23 @@ function find(arr, searchValue) {
 
 // find([1,2,3,4,5], 3) // 3
 // find([1,2,3,4,5], 10) // undefined
+
+// // FIND IN OBJECT
+function findInObj(arr, key, searchValue) {
+  return arr.filter(function(val) {
+    return val[key] === searchValue;
+  })[0];
+}
+
+// findInObj(
+//   [
+//     {first: 'Elie', last:"Schoppik"},
+//     {first: 'Tim', last:"Garcia", isCatOwner: true},
+//     {first: 'att', last:"Lane"},
+//     {first: 'Colt', last:"Steele", isCatOwner: true}
+//   ],
+//   'isCatOwner',
+//   true
+// )
+
+// {first: 'Tim', last:"Garcia", isCatOwner: true}
