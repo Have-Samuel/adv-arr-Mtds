@@ -228,3 +228,13 @@ function vowelCount(str) {
   return obj;
 }
 console.log(vowelCount('Have'));
+
+// // MAP
+function doubleValuesWithMap(arr) {
+  return arr.map(function(num) {
+    return num * 2;
+  });
+}
+
+// doubleValuesWithMap([1,2,3]) // [2,4,6]
+// doubleValuesWithMap([1,-2,-3]) // [2,-4,-6]
