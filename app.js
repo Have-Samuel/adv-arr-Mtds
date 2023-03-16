@@ -227,3 +227,4 @@ function vowelCount(str) {
   });
   return obj;
 }
+console.log(vowelCount('Have'));
