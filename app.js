@@ -284,3 +284,9 @@ extractFullName([
 */
 
 // // FILTER
+// filterByValue
+function filterByValue(arr, key) {
+  return arr.filter(function(val, idx) {
+    return val[key] !== undefined;
+  });
+}
