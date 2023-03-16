@@ -251,3 +251,34 @@ function extractKey(arr, key) {
     return val[key];
   });
 }
+
+// extractKey(
+//   [
+//     {name: 'Elie'},
+//     {name: 'Tim'},
+//     {name: 'Matt'},
+//     {name: 'Colt'}
+//   ],
+//   'name'
+// )
+
+// ['Elie', 'Tim', Matt', 'Colt']
+
+// // EXTRACT FULL NAME
+function extractFullName(arr) {
+  arr.map(function(val) {
+    return val.first + ' + ' +val.last;
+  });
+  return arr;
+}
+
+/*
+extractFullName([
+  {first: 'Elie', last:"Schoppik"},
+  {first: 'Tim', last:"Garcia"},
+  {first: 'Matt', last:"Lane"},
+  {first: 'Colt', last:"Steele"}
+])
+
+  // ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']
+*/
