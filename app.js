@@ -247,9 +247,7 @@ valTimesIndex([1, -2, -3]); // [0,-2,-6]
 
 // // EXTRACT KEY
 function extractKey(arr, key) {
-  return arr.map(function(val) {
-    return val[key];
-  });
+  return arr.map((val) => val[key]);
 }
 
 // extractKey(
@@ -266,9 +264,7 @@ function extractKey(arr, key) {
 
 // // EXTRACT FULL NAME
 function extractFullName(arr) {
-  arr.map(function(val) {
-    return val.first + ' + ' +val.last;
-  });
+  arr.map((val) => `${val.first} + ${val.last}`);
   return arr;
 }
 
@@ -286,9 +282,7 @@ extractFullName([
 // // FILTER
 // filterByValue
 function filterByValue(arr, key) {
-  return arr.filter(function(val, idx) {
-    return val[key] !== undefined;
-  });
+  return arr.filter((val, idx) => val[key] !== undefined);
 }
 
 // filterByValue(
@@ -310,9 +304,7 @@ function filterByValue(arr, key) {
 
 // // FIND
 function find(arr, searchValue) {
-  return arr.filter(function(val) {
-    return vaal === searchValue;
-  })[0];
+  return arr.filter((val) => vaal === searchValue)[0];
 }
 
 // find([1,2,3,4,5], 3) // 3
@@ -320,9 +312,7 @@ function find(arr, searchValue) {
 
 // // FIND IN OBJECT
 function findInObj(arr, key, searchValue) {
-  return arr.filter(function(val) {
-    return val[key] === searchValue;
-  })[0];
+  return arr.filter((val) => val[key] === searchValue)[0];
 }
 
 // findInObj(
@@ -341,9 +331,7 @@ function findInObj(arr, key, searchValue) {
 // // REMOVE VOWELS
 function removeVowels(str) {
   const vowels = 'aeiou';
-  return str.toLowercase().split('').filter(function(val) {
-    return vowels.indexOf(val) === -1;
-  }).join('');
+  return str.toLowercase().split('').filter((val) => vowels.indexOf(val) === -1).join('');
 }
 
 // removeVowels('Elie') // ('l')
@@ -361,7 +349,7 @@ function removeVowels(str) {
 
 // // DOUBLE ODD NUMBERS => FILTER
 function doubleOddNumbers(arr) {
-  return arr.filter(function(val) {
+  return arr.filter((val) => {
     if (val % 2 !== 0) {
       return val * 2;
     }
@@ -370,3 +358,25 @@ function doubleOddNumbers(arr) {
 
 // doubleOddNumbers([1,2,3,4,5]) // [2,6,10]
 // doubleOddNumbers([4,4,4,4,4]) // []
+
+// // SOME
+const words = [
+  'immunoelectrophoretically',
+  'rotavator',
+  'tsktsk',
+  'psychophysicotherapeutics',
+  'squirrelled',
+  'crypt',
+  'uncopyrightable',
+  'cysts',
+  'pseudopseudohypoparathyroidism',
+  'unimaginatively',
+];
+
+words.some(function(word) {
+  return word.length > 25;
+});
+
+words.some(function(word) {
+  return word.indexOf('thyriod') !== -1;
+});
