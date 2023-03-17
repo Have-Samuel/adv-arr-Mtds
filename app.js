@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 // // ForEach Method
 // const colors = ['teal', 'red', 'green', 'magenta'];
 
@@ -394,13 +395,39 @@
 // }
 // // Return true;
 
-const btn = document.querySelector('button');
-btn.addEventListener('click', function(e) {
-  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  const allChecked = Array.from(checkboxes).every(function(checkbox) {
-    return checkbox.checked;
-  });
-  if (!allChecked) {
-    alert('Agree To EveryThing!!!');
+// const btn = document.querySelector('button');
+// btn.addEventListener('click', function(e) {
+//   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+//   const allChecked = Array.from(checkboxes).every(function(checkbox) {
+//     return checkbox.checked;
+//   });
+//   if (!allChecked) {
+//     alert('Agree To EveryThing!!!');
+//   }
+// });
+
+// // // SOME
+// When writing SOME,
+// you want to return true if ANY of the values in the array return true
+// when passed to the callback function.
+function mySome(arr, callback) {
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i], i, arr)) return true;
   }
-});
+  return false;
+}
+
+mySome([1, 2, 3, 4, 5, 6], (val) => val % 2 === 0);
+
+// // // EVERY
+// When writing EVERY,
+// you want to return true if EVERY value in the array returns true
+// when passed to the callback function.
+function myEvery(arr, callback) {
+  for (let j = 0; j < arr.length; j++) {
+    if (!callback(arr[j], j, arr)) return false;
+  }
+  return true;
+}
+myEvery([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], (val) => val % 2 === 0);
+myEvery([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], (val) => Number.isInteger(val));
