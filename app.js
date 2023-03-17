@@ -380,3 +380,16 @@ words.some(function(word) {
 words.some(function(word) {
   return word.indexOf('thyriod') !== -1;
 });
+
+// // EVERY
+words.every(function(w) {
+  return w.length >= 5
+});
+// Returns true
+
+function allStrings(arr) {
+  return val.every(function(el) {
+    return typeof el === 'string';
+  });
+}
+// Return true;
