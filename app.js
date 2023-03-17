@@ -209,164 +209,198 @@
 //     ]
 //   */
 
-// // VOWEL COUNT
-function vowelCount(str) {
-  const splitArr = str.split('');
-  const obj = {};
-  const vowels = 'aeiou';
+// // // VOWEL COUNT
+// function vowelCount(str) {
+//   const splitArr = str.split('');
+//   const obj = {};
+//   const vowels = 'aeiou';
 
-  splitArr.forEach((letter) => {
-    const lowerCasedLetter = letter.toLowercase();
-    if (vowels.indexOf(lowerCasedLetter) !== -1) {
-      if (obj[lowerCasedLetter]) {
-        obj[lowerCasedLetter]++;
-      } else {
-        obj[lowerCasedLetter] = 1;
-      }
-    }
-  });
-  return obj;
-}
-console.log(vowelCount('Have'));
+//   splitArr.forEach((letter) => {
+//     const lowerCasedLetter = letter.toLowercase();
+//     if (vowels.indexOf(lowerCasedLetter) !== -1) {
+//       if (obj[lowerCasedLetter]) {
+//         obj[lowerCasedLetter]++;
+//       } else {
+//         obj[lowerCasedLetter] = 1;
+//       }
+//     }
+//   });
+//   return obj;
+// }
+// console.log(vowelCount('Have'));
 
-// // MAP
-function doubleValuesWithMap(arr) {
-  return arr.map((num) => num * 2);
-}
-
-// doubleValuesWithMap([1,2,3]) // [2,4,6]
-// doubleValuesWithMap([1,-2,-3]) // [2,-4,-6]
-
-// // VAL TIMES INDEX
-function valTimesIndex(arr) {
-  return arr.map((val, idx) => val * idx);
-}
-
-valTimesIndex([1, 2, 3]); // [0,2,6]
-valTimesIndex([1, -2, -3]); // [0,-2,-6]
-
-// // EXTRACT KEY
-function extractKey(arr, key) {
-  return arr.map(function(val) {
-    return val[key];
-  });
-}
-
-// extractKey(
-//   [
-//     {name: 'Elie'},
-//     {name: 'Tim'},
-//     {name: 'Matt'},
-//     {name: 'Colt'}
-//   ],
-//   'name'
-// )
-
-// ['Elie', 'Tim', Matt', 'Colt']
-
-// // EXTRACT FULL NAME
-function extractFullName(arr) {
-  arr.map(function(val) {
-    return val.first + ' + ' +val.last;
-  });
-  return arr;
-}
-
-/*
-extractFullName([
-  {first: 'Elie', last:"Schoppik"},
-  {first: 'Tim', last:"Garcia"},
-  {first: 'Matt', last:"Lane"},
-  {first: 'Colt', last:"Steele"}
-])
-
-  // ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']
-*/
-
-// // FILTER
-// filterByValue
-function filterByValue(arr, key) {
-  return arr.filter(function(val, idx) {
-    return val[key] !== undefined;
-  });
-}
-
-// filterByValue(
-//   [
-//     { first: 'Elie', last: 'Schoppik' },
-//     { first: 'Tim', last: 'Garcia', isCatOwner: true },
-//     { first: 'Matt', last: 'Lane' },
-//     { first: 'Colt', last: 'Steele', isCatOwner: true }
-//   ],
-//   'isCatOwner'
-// );
-
-/*
-    [
-      {first: 'Tim', last:"Garcia", isCatOwner: true},
-      {first: 'Colt', last:"Steele", isCatOwner: true}
-    ]
-  */
-
-// // FIND
-function find(arr, searchValue) {
-  return arr.filter(function(val) {
-    return vaal === searchValue;
-  })[0];
-}
-
-// find([1,2,3,4,5], 3) // 3
-// find([1,2,3,4,5], 10) // undefined
-
-// // FIND IN OBJECT
-function findInObj(arr, key, searchValue) {
-  return arr.filter(function(val) {
-    return val[key] === searchValue;
-  })[0];
-}
-
-// findInObj(
-//   [
-//     {first: 'Elie', last:"Schoppik"},
-//     {first: 'Tim', last:"Garcia", isCatOwner: true},
-//     {first: 'att', last:"Lane"},
-//     {first: 'Colt', last:"Steele", isCatOwner: true}
-//   ],
-//   'isCatOwner',
-//   true
-// )
-
-// {first: 'Tim', last:"Garcia", isCatOwner: true}
-
-// // REMOVE VOWELS
-function removeVowels(str) {
-  const vowels = 'aeiou';
-  return str.toLowercase().split('').filter(function(val) {
-    return vowels.indexOf(val) === -1;
-  }).join('');
-}
-
-// removeVowels('Elie') // ('l')
-// removeVowels('TIM') // ('tm')
-// removeVowels('ZZZZZZ') // ('zzzzzz')
-
-// // DOUBLE ODD NUMBERS => MAP
-// function doubleOddNumbers(arr) {
-//   return arr.filter(function(val) {
-//     return val % 2 !== 0; // odd
-//     }).map(function(val) {
-//       return val * 2;
-//     });
+// // // MAP
+// function doubleValuesWithMap(arr) {
+//   return arr.map((num) => num * 2);
 // }
 
-// // DOUBLE ODD NUMBERS => FILTER
-function doubleOddNumbers(arr) {
-  return arr.filter(function(val) {
-    if (val % 2 !== 0) {
-      return val * 2;
-    }
-  });
-}
+// // doubleValuesWithMap([1,2,3]) // [2,4,6]
+// // doubleValuesWithMap([1,-2,-3]) // [2,-4,-6]
 
-// doubleOddNumbers([1,2,3,4,5]) // [2,6,10]
-// doubleOddNumbers([4,4,4,4,4]) // []
+// // // VAL TIMES INDEX
+// function valTimesIndex(arr) {
+//   return arr.map((val, idx) => val * idx);
+// }
+
+// valTimesIndex([1, 2, 3]); // [0,2,6]
+// valTimesIndex([1, -2, -3]); // [0,-2,-6]
+
+// // // EXTRACT KEY
+// function extractKey(arr, key) {
+//   return arr.map((val) => val[key]);
+// }
+
+// // extractKey(
+// //   [
+// //     {name: 'Elie'},
+// //     {name: 'Tim'},
+// //     {name: 'Matt'},
+// //     {name: 'Colt'}
+// //   ],
+// //   'name'
+// // )
+
+// // ['Elie', 'Tim', Matt', 'Colt']
+
+// // // EXTRACT FULL NAME
+// function extractFullName(arr) {
+//   arr.map((val) => `${val.first} + ${val.last}`);
+//   return arr;
+// }
+
+// /*
+// extractFullName([
+//   {first: 'Elie', last:"Schoppik"},
+//   {first: 'Tim', last:"Garcia"},
+//   {first: 'Matt', last:"Lane"},
+//   {first: 'Colt', last:"Steele"}
+// ])
+
+//   // ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']
+// */
+
+// // // FILTER
+// // filterByValue
+// function filterByValue(arr, key) {
+//   return arr.filter((val, idx) => val[key] !== undefined);
+// }
+
+// // filterByValue(
+// //   [
+// //     { first: 'Elie', last: 'Schoppik' },
+// //     { first: 'Tim', last: 'Garcia', isCatOwner: true },
+// //     { first: 'Matt', last: 'Lane' },
+// //     { first: 'Colt', last: 'Steele', isCatOwner: true }
+// //   ],
+// //   'isCatOwner'
+// // );
+
+// /*
+//     [
+//       {first: 'Tim', last:"Garcia", isCatOwner: true},
+//       {first: 'Colt', last:"Steele", isCatOwner: true}
+//     ]
+//   */
+
+// // // FIND
+// function find(arr, searchValue) {
+//   return arr.filter((val) => vaal === searchValue)[0];
+// }
+
+// // find([1,2,3,4,5], 3) // 3
+// // find([1,2,3,4,5], 10) // undefined
+
+// // // FIND IN OBJECT
+// function findInObj(arr, key, searchValue) {
+//   return arr.filter((val) => val[key] === searchValue)[0];
+// }
+
+// // findInObj(
+// //   [
+// //     {first: 'Elie', last:"Schoppik"},
+// //     {first: 'Tim', last:"Garcia", isCatOwner: true},
+// //     {first: 'att', last:"Lane"},
+// //     {first: 'Colt', last:"Steele", isCatOwner: true}
+// //   ],
+// //   'isCatOwner',
+// //   true
+// // )
+
+// // {first: 'Tim', last:"Garcia", isCatOwner: true}
+
+// // // REMOVE VOWELS
+// function removeVowels(str) {
+//   const vowels = 'aeiou';
+//   return str.toLowercase().split('').filter((val) => vowels.indexOf(val) === -1).join('');
+// }
+
+// // removeVowels('Elie') // ('l')
+// // removeVowels('TIM') // ('tm')
+// // removeVowels('ZZZZZZ') // ('zzzzzz')
+
+// // // DOUBLE ODD NUMBERS => MAP
+// // function doubleOddNumbers(arr) {
+// //   return arr.filter(function(val) {
+// //     return val % 2 !== 0; // odd
+// //     }).map(function(val) {
+// //       return val * 2;
+// //     });
+// // }
+
+// // // DOUBLE ODD NUMBERS => FILTER
+// function doubleOddNumbers(arr) {
+//   return arr.filter((val) => {
+//     if (val % 2 !== 0) {
+//       return val * 2;
+//     }
+//   });
+// }
+
+// // doubleOddNumbers([1,2,3,4,5]) // [2,6,10]
+// // doubleOddNumbers([4,4,4,4,4]) // []
+
+// // // SOME
+// const words = [
+//   'immunoelectrophoretically',
+//   'rotavator',
+//   'tsktsk',
+//   'psychophysicotherapeutics',
+//   'squirrelled',
+//   'crypt',
+//   'uncopyrightable',
+//   'cysts',
+//   'pseudopseudohypoparathyroidism',
+//   'unimaginatively',
+// ];
+
+// words.some(function(word) {
+//   return word.length > 25;
+// });
+
+// words.some(function(word) {
+//   return word.indexOf('thyriod') !== -1;
+// });
+
+// // // EVERY
+// words.every(function(w) {
+//   return w.length >= 5
+// });
+// // Returns true
+
+// function allStrings(arr) {
+//   return val.every(function(el) {
+//     return typeof el === 'string';
+//   });
+// }
+// // Return true;
+
+const btn = document.querySelector('button');
+btn.addEventListener('click', function(e) {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  const allChecked = Array.from(checkboxes).every(function(checkbox) {
+    return checkbox.checked;
+  });
+  if (!allChecked) {
+    alert('Agree To EveryThing!!!');
+  }
+});
