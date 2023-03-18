@@ -463,3 +463,22 @@ function hasNoDuplicates(arr) {
 
 hasNoDuplicates([1, 2, 3, 1]); // false
 hasNoDuplicates([1, 2, 3]); // true
+
+// // // hasCertainKey
+function hasCertainKey(arr, key) {
+  return arr.every((val) => key in val);
+}
+
+// const arr = [
+//   { title: 'Instructor', first: 'Elie', last: 'Schoppik' },
+//   {
+//     title: 'Instructor', first: 'Tim', last: 'Garcia', isCatOwner: true
+//   },
+//   { title: 'Instructor', first: 'Matt', last: 'Lane' },
+//   {
+//     title: 'Instructor', first: 'Colt', last: 'Steele', isCatOwner: true
+//   }
+// ]
+
+hasCertainKey(arr, 'first'); // true
+hasCertainKey(arr, 'isCatOwner'); // false
