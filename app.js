@@ -447,3 +447,13 @@ function hasAZero(num) {
 
 hasAZero(33321232131012); // true
 hasAZero(1212121); // false
+
+// // // hasOnlyOddNumbers
+function hasOnlyOddNumbers(arr) {
+  return arr.every(function(val) {
+    return val % 2 !== 0;
+  });
+}
+
+hasOnlyOddNumbers([1, 3, 5, 7]); // true
+hasOnlyOddNumbers([1, 2, 3, 5, 7]); // false
