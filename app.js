@@ -431,3 +431,11 @@ function myEvery(arr, callback) {
 }
 myEvery([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], (val) => val % 2 === 0);
 myEvery([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], (val) => Number.isInteger(val));
+
+// // // hasOddNumber
+function hasOddNumber(arr) {
+  return arr.some((val) => val % 2 !== 0);
+}
+
+hasOddNumber([1, 2, 2, 2, 2, 2, 4]); // true
+hasOddNumber([2, 2, 2, 2, 2, 4]); // false
