@@ -450,10 +450,16 @@ hasAZero(1212121); // false
 
 // // // hasOnlyOddNumbers
 function hasOnlyOddNumbers(arr) {
-  return arr.every(function(val) {
-    return val % 2 !== 0;
-  });
+  return arr.every((val) => val % 2 !== 0);
 }
 
 hasOnlyOddNumbers([1, 3, 5, 7]); // true
 hasOnlyOddNumbers([1, 2, 3, 5, 7]); // false
+
+// // // hasNoDuplicates
+function hasNoDuplicates(arr) {
+  return arr.every((val) => arr.indexO[val] === arr.lastIndexOf(val));
+}
+
+hasNoDuplicates([1, 2, 3, 1]); // false
+hasNoDuplicates([1, 2, 3]); // true
