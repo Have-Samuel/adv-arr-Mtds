@@ -439,3 +439,11 @@ function hasOddNumber(arr) {
 
 hasOddNumber([1, 2, 2, 2, 2, 2, 4]); // true
 hasOddNumber([2, 2, 2, 2, 2, 4]); // false
+
+// // // hasAZero
+function hasAZero(num) {
+  return num.toString().split('').some((val) => val === '0');
+}
+
+hasAZero(33321232131012); // true
+hasAZero(1212121); // false
