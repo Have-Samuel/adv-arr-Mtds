@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-plusplus */
 // // ForEach Method
 // const colors = ['teal', 'red', 'green', 'magenta'];
@@ -554,8 +555,37 @@ const digits = [
   [55, 59, 69, 73, 73, 75, 79, 83, 88, 91, 93],
 ];
 
+// FInd finds the first value in an array that returns true when passed to a callback function.
 digits.find((digit) => digit > 75);
 // 79
 digits.find((digit) => digit > 100);
 // undefined
 digits.find((digit) => digit !== 0 && digit % 2 === 0);
+// 88
+
+// Filter finds all values in an array that return true when passed to a callback function.
+const evenScores = scores.filter((score) => score % 2 === 0);
+// (9) [0,0,0,0,0,0,88] = evenScores
+
+// findIndex finds the index of the first value in an array that returns true when passed to a callback function.
+const findEven = digits.find((digit) => digit !== 0 && digit % 2 === 0);
+// findEven = 16 as index
+// socres[16] = 88;
+
+// Getting array with two sub-arrays
+function partition(arr, pivot) {
+  const pivotIdx = arr.findIndex((val) => val > pivot);
+  console.log(pivotIdx);
+  const left = arr.slice(0, pivotIdx);
+  const right = arr.slice(pivotIdx);
+  return [left, right];
+}
+// partition(digits, 0); => 8
+
+partition(digits, 0);
+// [[0, 0, 0, 0, 0, 0, 0],
+// [55, 59, 69, 73, 73, 75, 79, 83, 88, 91, 93]]
+
+partition(digits, 75);
+// [0,0,0,0,0,0,0,55,59,69,73,73,75]
+// [79,83,88,91,93]
