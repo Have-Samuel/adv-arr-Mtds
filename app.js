@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /* eslint-disable no-plusplus */
 // // ForEach Method
 // const colors = ['teal', 'red', 'green', 'magenta'];
@@ -466,9 +465,9 @@ hasNoDuplicates([1, 2, 3, 1]); // false
 hasNoDuplicates([1, 2, 3]); // true
 
 // // // hasCertainKey
-// function hasCertainKey(arr, key) {
-//   return arr.every((val) => key in val);
-// }
+function hasCertainKey(arr, key) {
+  return arr.every((val) => key in val);
+}
 
 // const arr = [
 //   { title: 'Instructor', first: 'Elie', last: 'Schoppik' },
@@ -481,15 +480,15 @@ hasNoDuplicates([1, 2, 3]); // true
 //   }
 // ]
 
-// hasCertainKey(arr, 'first'); // true
-// hasCertainKey(arr, 'isCatOwner'); // false
+hasCertainKey(arr, 'first'); // true
+hasCertainKey(arr, 'isCatOwner'); // false
 
 // // // hasCertainValue
 function hasCertainValue(arr, key, searchValue) {
   return arr.every((val) => val[key] === searchValue);
 }
 
-const arr = [
+let arr = [
   { title: 'Instructor', first: 'Elie', last: 'Schoppik' },
   {
     title: 'Instructor', first: 'Tim', last: 'Garcia', isCatOwner: true,
@@ -502,116 +501,3 @@ const arr = [
 
 hasCertainValue(arr, 'title', 'Instructor'); // true
 hasCertainValue(arr, 'first', 'Elie');// false
-
-// Given a string s containing just the characters
-//  '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-// An input string is valid if:
-// Open brackets must be closed by the same type of brackets.
-// Open brackets must be closed in the correct order.
-
-// // // validParentheses
-// function validParentheses(str) {
-//   const stack = [];
-//   const open = ['(', '{', '['];
-//   const close = [')', '}', ']'];
-//   for (let i = 0; i < str.length; i++) {
-//     if (open.indexOf(str[i]) !== -1) {
-//       stack.push(str[i]);
-//     } else {
-//       const last = stack.pop();
-//       if (open.indexOf(last) !== close.indexOf(str[i])) return false;
-//     }
-//   }
-//   return stack.length === 0;
-// }
-
-// function validParentheses(s) {
-//   const stack = [];
-
-//   for (let i = 0; i < s.length; i += 1) {
-//     const top = stack[stack.length - 1];
-//     if (s[i] === '(' || s[i] === '{' || s[i] === '[') {
-//       stack.push(s[i]);
-//     } else if (s[i] === ')' && top === '(' && stack.length !== 0) {
-//       stack.pop();
-//     } else if (s[i] === ']' && top === '[' && stack.length !== 0) {
-//       stack.pop();
-//     } else if (s[i] === '}' && top === '{' && stack.length !== 0) {
-//       stack.pop();
-//     } else {
-//       return false;
-//     }
-//   }
-//   return stack.length === 0;
-// }
-
-// validParentheses('(', ')', '[', ']', '{', '}');
-
-// Partition(scores, 0)
-// Returns...
-
-const digits = [
-  [0, 0, 0, 0, 0, 0, 0],
-  [55, 59, 69, 73, 73, 75, 79, 83, 88, 91, 93],
-];
-
-// FInd finds the first value in an array that returns true when passed to a callback function.
-digits.find((digit) => digit > 75);
-// 79
-digits.find((digit) => digit > 100);
-// undefined
-digits.find((digit) => digit !== 0 && digit % 2 === 0);
-// 88
-
-// Filter finds all values in an array that return true when passed to a callback function.
-const evenScores = scores.filter((score) => score % 2 === 0);
-// (9) [0,0,0,0,0,0,88] = evenScores
-
-// findIndex finds the index of the first value in an array that returns true when passed to a callback function.
-const findEven = digits.find((digit) => digit !== 0 && digit % 2 === 0);
-// findEven = 16 as index
-// socres[16] = 88;
-
-// Getting array with two sub-arrays
-function partition(arr, pivot) {
-  const pivotIdx = arr.findIndex((val) => val > pivot);
-  console.log(pivotIdx);
-  const left = arr.slice(0, pivotIdx);
-  const right = arr.slice(pivotIdx);
-  return [left, right];
-}
-// partition(digits, 0); => 8
-
-partition(digits, 0);
-// [[0, 0, 0, 0, 0, 0, 0],
-// [55, 59, 69, 73, 73, 75, 79, 83, 88, 91, 93]]
-
-partition(digits, 75);
-// [0,0,0,0,0,0,0,55,59,69,73,73,75]
-// [79,83,88,91,93]
-
-function myFind(arr, cb) {
-  for (let i = 0; i < arr.length; i++) {
-    if (cb(arr[i], i, arr) === true) return arr[i];
-  }
-}
-myFind(digits, (digit) => digit > 91);
-// 93
-myFind(digits, (digit) => digit > 100);
-// undefined
-
-digits.findIndex((digit) => digit > 100);
-// -1
-
-// findIndex
-function myFindIndex(arr, cb) {
-  for (let i = 0; i < arr.length; i++) {
-    if (cb(arr[i], i, arr) === true) return i;
-  }
-  return -1;
-}
-
-myFindIndex(digits, (digit) => digit !== 0 && digit % 2 === 0);
-// 16
-// digits[16];
-// 88
