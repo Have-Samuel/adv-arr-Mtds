@@ -589,3 +589,29 @@ partition(digits, 0);
 partition(digits, 75);
 // [0,0,0,0,0,0,0,55,59,69,73,73,75]
 // [79,83,88,91,93]
+
+function myFind(arr, cb) {
+  for (let i = 0; i < arr.length; i++) {
+    if (cb(arr[i], i, arr) === true) return arr[i];
+  }
+}
+myFind(digits, (digit) => digit > 91);
+// 93
+myFind(digits, (digit) => digit > 100);
+// undefined
+
+digits.findIndex((digit) => digit > 100);
+// -1
+
+// findIndex
+function myFindIndex(arr, cb) {
+  for (let i = 0; i < arr.length; i++) {
+    if (cb(arr[i], i, arr) === true) return i;
+  }
+  return -1;
+}
+
+myFindIndex(digits, (digit) => digit !== 0 && digit % 2 === 0);
+// 16
+// digits[16];
+// 88
