@@ -465,9 +465,9 @@ hasNoDuplicates([1, 2, 3, 1]); // false
 hasNoDuplicates([1, 2, 3]); // true
 
 // // // hasCertainKey
-function hasCertainKey(arr, key) {
-  return arr.every((val) => key in val);
-}
+// function hasCertainKey(arr, key) {
+//   return arr.every((val) => key in val);
+// }
 
 // const arr = [
 //   { title: 'Instructor', first: 'Elie', last: 'Schoppik' },
@@ -480,15 +480,15 @@ function hasCertainKey(arr, key) {
 //   }
 // ]
 
-hasCertainKey(arr, 'first'); // true
-hasCertainKey(arr, 'isCatOwner'); // false
+// hasCertainKey(arr, 'first'); // true
+// hasCertainKey(arr, 'isCatOwner'); // false
 
 // // // hasCertainValue
 function hasCertainValue(arr, key, searchValue) {
   return arr.every((val) => val[key] === searchValue);
 }
 
-let arr = [
+const arr = [
   { title: 'Instructor', first: 'Elie', last: 'Schoppik' },
   {
     title: 'Instructor', first: 'Tim', last: 'Garcia', isCatOwner: true,
@@ -501,3 +501,61 @@ let arr = [
 
 hasCertainValue(arr, 'title', 'Instructor'); // true
 hasCertainValue(arr, 'first', 'Elie');// false
+
+// Given a string s containing just the characters
+//  '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+// An input string is valid if:
+// Open brackets must be closed by the same type of brackets.
+// Open brackets must be closed in the correct order.
+
+// // // validParentheses
+// function validParentheses(str) {
+//   const stack = [];
+//   const open = ['(', '{', '['];
+//   const close = [')', '}', ']'];
+//   for (let i = 0; i < str.length; i++) {
+//     if (open.indexOf(str[i]) !== -1) {
+//       stack.push(str[i]);
+//     } else {
+//       const last = stack.pop();
+//       if (open.indexOf(last) !== close.indexOf(str[i])) return false;
+//     }
+//   }
+//   return stack.length === 0;
+// }
+
+// function validParentheses(s) {
+//   const stack = [];
+
+//   for (let i = 0; i < s.length; i += 1) {
+//     const top = stack[stack.length - 1];
+//     if (s[i] === '(' || s[i] === '{' || s[i] === '[') {
+//       stack.push(s[i]);
+//     } else if (s[i] === ')' && top === '(' && stack.length !== 0) {
+//       stack.pop();
+//     } else if (s[i] === ']' && top === '[' && stack.length !== 0) {
+//       stack.pop();
+//     } else if (s[i] === '}' && top === '{' && stack.length !== 0) {
+//       stack.pop();
+//     } else {
+//       return false;
+//     }
+//   }
+//   return stack.length === 0;
+// }
+
+// validParentheses('(', ')', '[', ']', '{', '}');
+
+// Partition(scores, 0)
+// Returns...
+
+const digits = [
+  [0, 0, 0, 0, 0, 0, 0],
+  [55, 59, 69, 73, 73, 75, 79, 83, 88, 91, 93],
+];
+
+digits.find((digit) => digit > 75);
+// 79
+digits.find((digit) => digit > 100);
+// undefined
+digits.find((digit) => digit !== 0 && digit % 2 === 0);
