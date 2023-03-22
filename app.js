@@ -132,3 +132,29 @@ addKeyAndValue(arr, 'title', 'Instructor') //
     { title: 'Instructor', name: 'Matt' },
     { title: 'Instructor', name: 'Colt' }
   ];
+
+// Partition function
+function partition(arr, cb) {
+  return arr.reduce((accum, nextVal) => {
+    if (cb(nextVal)) {
+      accum[0].push(nextVal);
+    } else {
+      accum[1].push(nextVal);
+    }
+    return accum;
+  });
+}
+
+function isEven(val) {
+  return val % 2 === 0;
+}
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+partition(arr, isEven); // [[2,4,6,8], [1,3,5,7]]
+
+function isLongerThanThreeCharacter(val) {
+  return val.length > 3;
+}
+
+const names = ['Adrine', 'Have', 'Walker', 'Shannell'];
