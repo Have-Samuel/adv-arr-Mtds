@@ -81,4 +81,36 @@ const finalScore = [89, 92, 83, 88, 94, 90, 76];
 
 // const minFinalsScore = finalScore.reduce((min, nextScore) => (nextScore < min ? nextScore : min));
 
-const minOverallScore = finalScore.reduce((min, nextScore) => (nextScore < min ? nextScore : min), minMidtermScore );
+const minOverallScore = finalScore.reduce((min, nextScore) => (nextScore < min ? nextScore : min), minMidtermScore);
+
+// Returns a new array with the value of each object at the key.
+function extraValue(arr, val) {
+  return arr.reduce((accum, nextKey) => {
+    accum.push(nextKey[val]);
+    return accum;
+  }, []);
+}
+// const arr = [{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}]
+// extractValue(arr,'name') // ['Elie', 'Tim', 'Matt', 'Colt']
+
+// Returns an object with the keys as the vowel and
+// the values as the number of times the vowel appears in the string.
+function vowelCount(str) {
+  const vowels = 'aeiou';
+  return str.split('').reduce(function(accum, nextVowel) {
+    let lowerCased = nextVowel.toLowerCase();
+    if (vowels.indexOf(lowerCased) !== -1) {
+      if (accum[lowerCased]) {
+        accum[lowerCased] ++;
+      } else {
+        accum[lowerCased] = 1;
+      }
+    }
+    return accum;
+  }, {});
+}
+console.log(vowelCount('Elie')); // {e:2,i:1};
+vowelCount('Tim'); // {i:1};
+vowelCount('Matt'); // {a:1})
+vowelCount('hmmm'); // {};
+vowelCount('I Am awesome and so are you'); // {i: 1, a: 4, e: 3, o: 3, u: 1};
