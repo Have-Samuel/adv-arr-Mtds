@@ -97,11 +97,11 @@ function extraValue(arr, val) {
 // the values as the number of times the vowel appears in the string.
 function vowelCount(str) {
   const vowels = 'aeiou';
-  return str.split('').reduce(function(accum, nextVowel) {
-    let lowerCased = nextVowel.toLowerCase();
+  return str.split('').reduce((accum, nextVowel) => {
+    const lowerCased = nextVowel.toLowerCase();
     if (vowels.indexOf(lowerCased) !== -1) {
       if (accum[lowerCased]) {
-        accum[lowerCased] ++;
+        accum[lowerCased]++;
       } else {
         accum[lowerCased] = 1;
       }
@@ -114,3 +114,21 @@ vowelCount('Tim'); // {i:1};
 vowelCount('Matt'); // {a:1})
 vowelCount('hmmm'); // {};
 vowelCount('I Am awesome and so are you'); // {i: 1, a: 4, e: 3, o: 3, u: 1};
+
+// addKeyAndValue function
+const arr = [{ name: 'Elie' }, { name: 'Tim' }, { name: 'Matt' }, { name: 'Colt' }];
+
+function addKeyAndValue(arr, key, value) {
+  return arr.reduce((accum, nextKey, index) => {
+    accum[index][key] = value;
+    return accum;
+  }, arr);
+}
+
+addKeyAndValue(arr, 'title', 'Instructor') //
+  [
+    { title: 'Instructor', name: 'Elie' },
+    { title: 'Instructor', name: 'Tim' },
+    { title: 'Instructor', name: 'Matt' },
+    { title: 'Instructor', name: 'Colt' }
+  ];
