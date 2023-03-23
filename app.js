@@ -116,3 +116,27 @@ const allVowels = [...vowels];
 const vowels2 = 'aeiou';
 vowels2.split('');
 // ['a', 'e', 'i', 'o', 'u']
+
+// Spreading an Object in an Array or into a Function call
+const tea = {
+  type: 'oolong',
+  name: 'Winter Sprout',
+  origin: 'Taiwan',
+};
+
+// const arr = [...tea];
+// // TypeError Tea is not iterable
+// for (const y of tea) {
+//   console.log(y);
+// }
+// // TypeError Tea is not iterable
+
+// A copy of tea
+// const tea2 = { ...tea };
+//  {
+//   type: 'oolong',
+//   name: 'Winter Sprout',
+//   origin: 'Taiwan',
+// };
+
+// But tea === tea2 => false
