@@ -267,10 +267,22 @@
 // //   price: 13.5
 // // }
 
-// Refactoring
+// Refactoring1
 function filterOutOdds() {
   const nums = Array.prototype.slice.call(arguments);
   return nums.filter((num) => num % 2 === 0);
 }
 // Refactored
 const filterOutOds = (...args) => args.filter((num) => num % 2 === 0);
+
+// FindMin using Rest
+// function findMin(...nums) {
+//   return Math.min(...nums);
+// } // => 1
+const findMin = (...nums) => Math.min(...nums);
+findMin(1, 4, 12, -3); // -3
+findMin(1, -1); // -1
+findMin(3, 1); // 1
+
+// FindMin using Rest
+const mergeObjects = (obj1, obj2) => ({ ...obj1, ...obj2 }); // => { a: 1, b: 2, c: 3, d: 4 }
