@@ -116,3 +116,152 @@ const allVowels = [...vowels];
 const vowels2 = 'aeiou';
 vowels2.split('');
 // ['a', 'e', 'i', 'o', 'u']
+
+// // Spreading an Object in an Array or into a Function call
+// const tea = {
+//   type: 'oolong',
+//   name: 'Winter Sprout',
+//   origin: 'Taiwan',
+// };
+
+// // const arr = [...tea];
+// // // TypeError Tea is not iterable
+// // for (const y of tea) {
+// //   console.log(y);
+// // }
+// // // TypeError Tea is not iterable
+
+// // A copy of tea
+// // const tea2 = { ...tea };
+// //  {
+// //   type: 'oolong',
+// //   name: 'Winter Sprout',
+// //   origin: 'Taiwan',
+// // };
+
+// // But tea === tea2 => false
+
+// // We can add and copy properties
+// const teaTin = { ...tea, price: 9.54 };
+// //  {
+// //   type: 'oolong',
+// //   name: 'Winter Sprout',
+// //   origin: 'Taiwan',
+// //  price: 9.54
+// // };
+
+// // We can also change properties
+// const newTea = { ...tea, name: 'Golden Frost' };
+// //  {
+// //   type: 'oolong',
+// //   name: 'Golden Frost' ===> Name changes
+// //   origin: 'Taiwan',
+// //  price: 9.54
+// // };
+
+// const newTea = { name: 'Golden Frost', ...tea };
+// //  {
+// //   type: 'oolong',
+// //   name: 'Winter Sprout', ===> Name doesn't changes
+// //   origin: 'Taiwan',
+// //  price: 9.54
+// // };
+
+// // Combining objects in new Objects like in Arrays
+// const teaData = {
+//   steepTime: '30s',
+//   brewTemp: 175,
+//   origin: 'Japan'
+// }
+
+// const fullTea = { ...tea, ...teaData }
+
+// //  {
+// //   type: 'oolong',
+// //   name: 'Winter Sprout',
+// //   origin: 'Taiwan',
+// //  price: 9.54
+// //  steepTime: '30s',
+// //  brewTemp: 175
+// // };
+
+// const fullTea = { ...tea, ...teaData } // => origin is 'Japan'
+
+// //  {
+// //   type: 'oolong',
+// //   name: 'Winter Sprout',
+// //   origin: 'Japan',
+// //  price: 9.54
+// //  steepTime: '30s',
+// //  brewTemp: 175
+// // };
+
+// const fullTea = { ...tea, ...teaData, origin: 'China' } // => origin is 'China'
+// //  {
+// //   type: 'oolong',
+// //   name: 'Winter Sprout',
+// //   origin: 'China',
+// //  price: 9.54
+// //  steepTime: '30s',
+// //  brewTemp: 175
+// // };
+
+// CLONING -> Creating copies of nested Data Structures using the Spread operator
+const shoppingCart = [
+  {
+    name: 'honey orchid',
+    quantity: 2,
+    price: 13.5
+  },
+  {
+    name: 'African solstice',
+    quantity: 4,
+    price: 25.99
+  }
+]
+
+const cartCopy = [...shoppingCart];
+// {
+//   name: 'honey orchid',
+//   quantity: 2,
+//   price: 13.5
+// },
+// {
+//   name: 'African solstice',
+//   quantity: 4,
+//   price: 25.99
+// }
+
+// shoppingCart === cartCopy => false
+
+shoppingCart[0]
+// {
+//   name: 'honey orchid',
+//   quantity: 2,
+//   price: 13.5
+// }
+
+cartCopy[0]
+// {
+//   name: 'honey orchid',
+//   quantity: 2,
+//   price: 13.5
+// }
+
+shoppingCart[0] === cartCopy[0]
+// true
+
+cartCopy.quantity = 99;
+// 99
+cartCopy // ===> this update on properties changes the original => shoppingCart
+// {
+//   name: 'honey orchid',
+//   quantity: 99,
+//   price: 13.5
+// }
+shoppingCart
+// {
+//   name: 'honey orchid',
+//   quantity: 99,
+//   price: 13.5
+// }
