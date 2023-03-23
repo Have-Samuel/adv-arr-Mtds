@@ -166,3 +166,42 @@ const newTea = { name: 'Golden Frost', ...tea };
 //   origin: 'Taiwan',
 //  price: 9.54
 // };
+
+// Combining objects in new Objects like in Arrays
+const teaData = {
+  steepTime: '30s',
+  brewTemp: 175,
+  origin: 'Japan'
+}
+
+const fullTea = { ...tea, ...teaData }
+
+//  {
+//   type: 'oolong',
+//   name: 'Winter Sprout',
+//   origin: 'Taiwan',
+//  price: 9.54
+//  steepTime: '30s',
+//  brewTemp: 175
+// };
+
+const fullTea = { ...tea, ...teaData } // => origin is 'Japan'
+
+//  {
+//   type: 'oolong',
+//   name: 'Winter Sprout',
+//   origin: 'Japan',
+//  price: 9.54
+//  steepTime: '30s',
+//  brewTemp: 175
+// };
+
+const fullTea = { ...tea, ...teaData, origin: 'China' } // => origin is 'China'
+//  {
+//   type: 'oolong',
+//   name: 'Winter Sprout',
+//   origin: 'China',
+//  price: 9.54
+//  steepTime: '30s',
+//  brewTemp: 175
+// };
