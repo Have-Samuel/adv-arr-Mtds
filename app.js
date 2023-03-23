@@ -41,3 +41,9 @@ filterByType('number', ...things); // [4, 2, 1]
 filterByType('string', ...things); // ['dog', 'cat', 'fish']
 filterByType('boolean', ...things); // [true, false]
 filterByType('undefined', ...things); // [undefined]
+
+// In javascript, a string is a spreadable object
+console.log(things); // ['dog', 4, 'cat', 2, undefined, 'boolean', 'fish', 1, true, false]
+console.log(...things); // dog 4 cat 2 undefined boolean fish 1 true false
+console.log(...'hello'); // h e l l o
+console.log('hello'); // hello
