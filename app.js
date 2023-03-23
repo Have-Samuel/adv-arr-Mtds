@@ -295,3 +295,11 @@ const doubleAndReturnArgs = (arr, ...nums) => ([...arr, ...nums.map((num) => num
 
 doubleAndReturnArgs([1, 2, 3], 4, 4); // [2, 4, 6, 8, 8]
 doubleAndReturnArgs([2], 10, 4); // [4, 20, 8]
+
+// Slice and Dice1
+const removeRandom = (items) => {
+  const randomIdx = Math.floor(Math.random() * items.length);
+  return [...items.slice(0, randomIdx), ...items.slice(randomIdx + 1)];
+};
+removeRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // [1, 2, 3, 4, 5, 6, 7, 8, 10]
+removeRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
