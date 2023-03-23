@@ -26,3 +26,10 @@ function removeUser(usersArray, username) {
   if (foundIndex === -1) return;
   return usersArray.splice(foundIndex, 1)[0];
 }
+
+// Spread Operator
+const nums = [4, 5, 6, 78, 43, 56];
+Math.max(nums); // NaN
+Math.max(...nums); // 78
+
+const
