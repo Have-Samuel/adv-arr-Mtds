@@ -32,4 +32,12 @@ const nums = [4, 5, 6, 78, 43, 56];
 Math.max(nums); // NaN
 Math.max(...nums); // 78
 
-const
+// Filter by Type
+const filterByType = (type, ...vals) => vals.filter((val) => typeof (val) === type);
+// If we have function and we want to filter by type, we can use the typeof operator
+const things = ['dog', 4, 'cat', 2, undefined, 'boolean', 'fish', 1, true, false];
+
+filterByType('number', ...things); // [4, 2, 1]
+filterByType('string', ...things); // ['dog', 'cat', 'fish']
+filterByType('boolean', ...things); // [true, false]
+filterByType('undefined', ...things); // [undefined]
