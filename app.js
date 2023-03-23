@@ -329,3 +329,6 @@ function removeVal(obj, key) {
 
 // Slice and Dice5
 // Combine two objects and return a new object
+function combine(obje1, obje2) {
+  return { ...obje1, ...obje2 };
+}
