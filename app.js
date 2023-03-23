@@ -310,3 +310,22 @@ removeRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 // Return a new array with every item in array1 and array2.
 const newArray = (arr1, arr2) => [...arr1, ...arr2];
 return newArray([1, 2, 3], [4, 5, 6]); // [1, 2, 3, 4, 5, 6]
+
+// Slice and Dice3
+// Return a new object with all the keys and values
+// from obj and a new key/value pair
+function addKeyVal(obj, key, val) {
+  const newObj = [...obj];
+  newObj[key] = val;
+  return newObj;
+}
+
+// Slice and Dice4
+function removeVal(obj, key) {
+  const newObj2 = { ...obj };
+  delete newObj2[key];
+  return newObj2;
+}
+
+// Slice and Dice5
+// Combine two objects and return a new object
