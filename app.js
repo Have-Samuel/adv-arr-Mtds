@@ -332,3 +332,12 @@ function removeVal(obj, key) {
 function combine(obje1, obje2) {
   return { ...obje1, ...obje2 };
 }
+
+// Slice and Dice6
+// Return a new object with a modified key and value.
+function update(object, key, val) {
+  // return { object [key] : [val] }
+  const newerObj = { ...object };
+  newerObj[key] = val;
+  return newerObj;
+}
