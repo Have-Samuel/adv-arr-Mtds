@@ -13,43 +13,43 @@
 // findUserByUsername(users, 'taco'); // undefined
 
 // removeUser
-const users = [
-  { username: 'mlewis' },
-  { username: 'akagen' },
-  { username: 'msmith' },
-];
+// const users = [
+//   { username: 'mlewis' },
+//   { username: 'akagen' },
+//   { username: 'msmith' },
+// ];
 
-// Removes a user from the array of users
-// Returns the removed user or undefined if no user was removed
-function removeUser(usersArray, username) {
-  const foundIndex = usersArray.findIndex((user) => user.username = username);
-  if (foundIndex === -1) return;
-  return usersArray.splice(foundIndex, 1)[0];
-}
+// // Removes a user from the array of users
+// // Returns the removed user or undefined if no user was removed
+// function removeUser(usersArray, username) {
+//   const foundIndex = usersArray.findIndex((user) => user.username = username);
+//   if (foundIndex === -1) return;
+//   return usersArray.splice(foundIndex, 1)[0];
+// }
 
-// Spread Operator
-const nums = [4, 5, 6, 78, 43, 56];
-Math.max(nums); // NaN
-Math.max(...nums); // 78
+// // Spread Operator
+// const nums = [4, 5, 6, 78, 43, 56];
+// Math.max(nums); // NaN
+// Math.max(...nums); // 78
 
-// Filter by Type
-const filterByType = (type, ...vals) => vals.filter((val) => typeof (val) === type);
-// If we have function and we want to filter by type, we can use the typeof operator
-const things = ['dog', 4, 'cat', 2, undefined, 'boolean', 'fish', 1, true, false];
+// // Filter by Type
+// const filterByType = (type, ...vals) => vals.filter((val) => typeof (val) === type);
+// // If we have function and we want to filter by type, we can use the typeof operator
+// const things = ['dog', 4, 'cat', 2, undefined, 'boolean', 'fish', 1, true, false];
 
-filterByType('number', ...things); // [4, 2, 1]
-filterByType('string', ...things); // ['dog', 'cat', 'fish']
-filterByType('boolean', ...things); // [true, false]
-filterByType('undefined', ...things); // [undefined]
+// filterByType('number', ...things); // [4, 2, 1]
+// filterByType('string', ...things); // ['dog', 'cat', 'fish']
+// filterByType('boolean', ...things); // [true, false]
+// filterByType('undefined', ...things); // [undefined]
 
-// In javascript, a string is a spreadable object
-console.log(things); // ['dog', 4, 'cat', 2, undefined, 'boolean', 'fish', 1, true, false]
-console.log(...things); // dog 4 cat 2 undefined boolean fish 1 true false
-console.log(...'hello'); // h e l l o
-console.log('hello'); // hello
+// // In javascript, a string is a spreadable object
+// console.log(things); // ['dog', 4, 'cat', 2, undefined, 'boolean', 'fish', 1, true, false]
+// console.log(...things); // dog 4 cat 2 undefined boolean fish 1 true false
+// console.log(...'hello'); // h e l l o
+// console.log('hello'); // hello
 
-// Using spread Operator on array laterals
-const palette = ['lavender berry', 'sunflower yellow', 'orchid orange'];
+// // Using spread Operator on array laterals
+// const palette = ['lavender berry', 'sunflower yellow', 'orchid orange'];
 
 // const paletteCopy = palette;
 // // ['lavender berry', 'sunflower yellow', 'orchid orange']
@@ -87,34 +87,35 @@ const palette = ['lavender berry', 'sunflower yellow', 'orchid orange'];
 // palette;
 // ['lavender berry', 'sunflower yellow', 'orchid orange'] => original array
 
-// Using different functions to create one array
-const greenTeas = ['birch', 'pine', 'cedar'];
-const oolongTeas = ['daisy', 'rose', 'lily'];
-const herbalTeas = ['chamomile', 'mint', 'lemon balm'];
-const coffees = ['espresso', 'cappuccino', 'latte'];
+// // Using different functions to create one array
+// const greenTeas = ['birch', 'pine', 'cedar'];
+// const oolongTeas = ['daisy', 'rose', 'lily'];
+// const herbalTeas = ['chamomile', 'mint', 'lemon balm'];
+// const coffees = ['espresso', 'cappuccino', 'latte'];
 
-const allteas = [...greenTeas, ...oolongTeas, ...herbalTeas];
-// ['birch', 'pine', 'cedar', 'daisy', 'rose', 'lily', 'chamomile', 'mint', 'lemon balm']
+// const allteas = [...greenTeas, ...oolongTeas, ...herbalTeas];
+// // ['birch', 'pine', 'cedar', 'daisy', 'rose', 'lily', 'chamomile', 'mint', 'lemon balm']
 
-// Adding another tea from any other array
-const allTeas2 = [...greenTeas, ...oolongTeas, 'jasmine', ...herbalTeas, 'peppermint'];
-// ['birch', 'pine', 'cedar', 'daisy', 'rose', 'lily',
-// 'jasmine', 'chamomile', 'mint', 'lemon balm', 'peppermint']
+// // Adding another tea from any other array
+// const allTeas2 = [...greenTeas, ...oolongTeas, 'jasmine', ...herbalTeas, 'peppermint'];
+// // ['birch', 'pine', 'cedar', 'daisy', 'rose', 'lily',
+// // 'jasmine', 'chamomile', 'mint', 'lemon balm', 'peppermint']
 
-// We can spread other iterables like strings
-const allTeas3 = [...greenTeas, ...oolongTeas, 'jasmine', ...herbalTeas, 'peppermint', ...'green tea'];
-// ['birch', 'pine', 'cedar', 'daisy', 'rose', 'lily',
-// 'jasmine', 'chamomile', 'mint', 'lemon balm',
-// 'peppermint', 'g', 'r', 'e', 'e', 'n', ' ', 't', 'e', 'a']
+// // We can spread other iterables like strings
+// const allTeas3 = [...greenTeas, ...oolongTeas, 'jasmine',
+// ...herbalTeas, 'peppermint', ...'green tea'];
+// // ['birch', 'pine', 'cedar', 'daisy', 'rose', 'lily',
+// // 'jasmine', 'chamomile', 'mint', 'lemon balm',
+// // 'peppermint', 'g', 'r', 'e', 'e', 'n', ' ', 't', 'e', 'a']
 
-// Another way to spread strings
-const vowels = 'aeiou';
-const allVowels = [...vowels];
-// ['a', 'e', 'i', 'o', 'u']
+// // Another way to spread strings
+// const vowels = 'aeiou';
+// const allVowels = [...vowels];
+// // ['a', 'e', 'i', 'o', 'u']
 
-// Another way to spread strings
-const vowels2 = 'aeiou';
-vowels2.split('');
+// // Another way to spread strings
+// const vowels2 = 'aeiou';
+// vowels2.split('');
 // ['a', 'e', 'i', 'o', 'u']
 
 // // Spreading an Object in an Array or into a Function call
@@ -207,61 +208,136 @@ vowels2.split('');
 // // };
 
 // CLONING -> Creating copies of nested Data Structures using the Spread operator
-const shoppingCart = [
-  {
-    name: 'honey orchid',
-    quantity: 2,
-    price: 13.5
-  },
-  {
-    name: 'African solstice',
-    quantity: 4,
-    price: 25.99
-  }
-]
+// const shoppingCart = [
+//   {
+//     name: 'honey orchid',
+//     quantity: 2,
+//     price: 13.5
+//   },
+//   {
+//     name: 'African solstice',
+//     quantity: 4,
+//     price: 25.99
+//   }
+// ]
 
-const cartCopy = [...shoppingCart];
-// {
-//   name: 'honey orchid',
-//   quantity: 2,
-//   price: 13.5
-// },
-// {
-//   name: 'African solstice',
-//   quantity: 4,
-//   price: 25.99
-// }
+// const cartCopy = [...shoppingCart];
+// // {
+// //   name: 'honey orchid',
+// //   quantity: 2,
+// //   price: 13.5
+// // },
+// // {
+// //   name: 'African solstice',
+// //   quantity: 4,
+// //   price: 25.99
+// // }
 
-// shoppingCart === cartCopy => false
+// // shoppingCart === cartCopy => false
 
-shoppingCart[0]
-// {
-//   name: 'honey orchid',
-//   quantity: 2,
-//   price: 13.5
-// }
+// shoppingCart[0]
+// // {
+// //   name: 'honey orchid',
+// //   quantity: 2,
+// //   price: 13.5
+// // }
 
-cartCopy[0]
-// {
-//   name: 'honey orchid',
-//   quantity: 2,
-//   price: 13.5
-// }
+// cartCopy[0]
+// // {
+// //   name: 'honey orchid',
+// //   quantity: 2,
+// //   price: 13.5
+// // }
 
-shoppingCart[0] === cartCopy[0]
-// true
+// shoppingCart[0] === cartCopy[0]
+// // true
 
-cartCopy.quantity = 99;
-// 99
-cartCopy // ===> this update on properties changes the original => shoppingCart
-// {
-//   name: 'honey orchid',
-//   quantity: 99,
-//   price: 13.5
-// }
-shoppingCart
-// {
-//   name: 'honey orchid',
-//   quantity: 99,
-//   price: 13.5
-// }
+// cartCopy.quantity = 99;
+// // 99
+// cartCopy // ===> this update on properties changes the original => shoppingCart
+// // {
+// //   name: 'honey orchid',
+// //   quantity: 99,
+// //   price: 13.5
+// // }
+// shoppingCart
+// // {
+// //   name: 'honey orchid',
+// //   quantity: 99,
+// //   price: 13.5
+// // }
+
+// Refactoring1
+function filterOutOdds() {
+  const nums = Array.prototype.slice.call(arguments);
+  return nums.filter((num) => num % 2 === 0);
+}
+// Refactored
+const filterOutOds = (...args) => args.filter((num) => num % 2 === 0);
+
+// FindMin using Rest
+// function findMin(...nums) {
+//   return Math.min(...nums);
+// } // => 1
+const findMin = (...nums) => Math.min(...nums);
+findMin(1, 4, 12, -3); // -3
+findMin(1, -1); // -1
+findMin(3, 1); // 1
+
+// FindMin using Rest
+const mergeObjects = (obj1, obj2) => ({ ...obj1, ...obj2 });
+
+mergeObjects({ a: 1, b: 2 }, { c: 3, d: 4 });
+// => { a: 1, b: 2, c: 3, d: 4 }
+
+// Double and return args
+const doubleAndReturnArgs = (arr, ...nums) => ([...arr, ...nums.map((num) => num * 2)]);
+
+doubleAndReturnArgs([1, 2, 3], 4, 4); // [2, 4, 6, 8, 8]
+doubleAndReturnArgs([2], 10, 4); // [4, 20, 8]
+
+/** remove a random element in the items array
+and return a new array without that item. */
+// Slice and Dice1
+const removeRandom = (items) => {
+  const randomIdx = Math.floor(Math.random() * items.length);
+  return [...items.slice(0, randomIdx), ...items.slice(randomIdx + 1)];
+};
+removeRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // [1, 2, 3, 4, 5, 6, 7, 8, 10]
+removeRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// Slice and Dice2
+// Return a new array with every item in array1 and array2.
+const newArray = (arr1, arr2) => [...arr1, ...arr2];
+return newArray([1, 2, 3], [4, 5, 6]); // [1, 2, 3, 4, 5, 6]
+
+// Slice and Dice3
+// Return a new object with all the keys and values
+// from obj and a new key/value pair
+function addKeyVal(obj, key, val) {
+  const newObj = [...obj];
+  newObj[key] = val;
+  return newObj;
+}
+
+// Slice and Dice4
+function removeVal(obj, key) {
+  const newObj2 = { ...obj };
+  delete newObj2[key];
+  return newObj2;
+}
+
+// Slice and Dice5
+// Combine two objects and return a new object
+function combine(obje1, obje2) {
+  return { ...obje1, ...obje2 };
+}
+
+// Slice and Dice6
+// Return a new object with a modified key and value.
+function update(object, key, val) {
+  // return { object [key] : [val] }
+  const newerObj = { ...object };
+  newerObj[key] = val;
+  return newerObj;
+}
