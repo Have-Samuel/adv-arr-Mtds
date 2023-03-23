@@ -285,4 +285,13 @@ findMin(1, -1); // -1
 findMin(3, 1); // 1
 
 // FindMin using Rest
-const mergeObjects = (obj1, obj2) => ({ ...obj1, ...obj2 }); // => { a: 1, b: 2, c: 3, d: 4 }
+const mergeObjects = (obj1, obj2) => ({ ...obj1, ...obj2 });
+
+mergeObjects({ a: 1, b: 2 }, { c: 3, d: 4 });
+// => { a: 1, b: 2, c: 3, d: 4 }
+
+// Double and return args
+const doubleAndReturnArgs = (arr, ...nums) => ([...arr, ...nums.map((num) => num * 2)]);
+
+doubleAndReturnArgs([1, 2, 3], 4, 4); // [2, 4, 6, 8, 8]
+doubleAndReturnArgs([2], 10, 4); // [4, 20, 8]
