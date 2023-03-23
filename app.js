@@ -140,3 +140,29 @@ const tea = {
 // };
 
 // But tea === tea2 => false
+
+// We can add and copy properties
+const teaTin = { ...tea, price: 9.54 };
+//  {
+//   type: 'oolong',
+//   name: 'Winter Sprout',
+//   origin: 'Taiwan',
+//  price: 9.54
+// };
+
+// We can also change properties
+const newTea = { ...tea, name: 'Golden Frost' };
+//  {
+//   type: 'oolong',
+//   name: 'Golden Frost' ===> Name changes
+//   origin: 'Taiwan',
+//  price: 9.54
+// };
+
+const newTea = { name: 'Golden Frost', ...tea };
+//  {
+//   type: 'oolong',
+//   name: 'Winter Sprout', ===> Name doesn't changes
+//   origin: 'Taiwan',
+//  price: 9.54
+// };
