@@ -433,9 +433,31 @@ createInstructor('Have', 'Peace');
 // instructor[favoriteNumber] = "That is my favorite!"
 
 // ES2015 Version
-let favoriteNumber = 42;
+// let favoriteNumber = 42;
 
+// const instructor = {
+//   firstName: 'Colt',
+//   [favoriteNumber]: 'That is my favorite!';
+// };
+
+// EARLIER VERSION
+// var instructor = {
+//   firstName: "Colt",
+//   sayHi: function(){
+//     return "Hi!";
+//   },
+//   sayBye: function(){
+//     return this.firstName + " says bye!";
+//   }
+// }
+
+// ES2015 VERSION
 const instructor = {
   firstName: 'Colt',
-  [favoriteNumber]: 'That is my favorite!';
+  sayHi() {
+    return 'Hi';
+  },
+  sayBye() {
+    return `${this.firstName} says bye!`;
+  },
 };
