@@ -267,77 +267,138 @@
 // //   price: 13.5
 // // }
 
-// Refactoring1
-function filterOutOdds() {
-  const nums = Array.prototype.slice.call(arguments);
-  return nums.filter((num) => num % 2 === 0);
+// // Refactoring1
+// function filterOutOdds() {
+//   const nums = Array.prototype.slice.call(arguments);
+//   return nums.filter((num) => num % 2 === 0);
+// }
+// // Refactored
+// const filterOutOds = (...args) => args.filter((num) => num % 2 === 0);
+
+// // FindMin using Rest
+// // function findMin(...nums) {
+// //   return Math.min(...nums);
+// // } // => 1
+// const findMin = (...nums) => Math.min(...nums);
+// findMin(1, 4, 12, -3); // -3
+// findMin(1, -1); // -1
+// findMin(3, 1); // 1
+
+// // FindMin using Rest
+// const mergeObjects = (obj1, obj2) => ({ ...obj1, ...obj2 });
+
+// mergeObjects({ a: 1, b: 2 }, { c: 3, d: 4 });
+// // => { a: 1, b: 2, c: 3, d: 4 }
+
+// // Double and return args
+// const doubleAndReturnArgs = (arr, ...nums) => ([...arr, ...nums.map((num) => num * 2)]);
+
+// doubleAndReturnArgs([1, 2, 3], 4, 4); // [2, 4, 6, 8, 8]
+// doubleAndReturnArgs([2], 10, 4); // [4, 20, 8]
+
+// /** remove a random element in the items array
+// and return a new array without that item. */
+// // Slice and Dice1
+// const removeRandom = (items) => {
+//   const randomIdx = Math.floor(Math.random() * items.length);
+//   return [...items.slice(0, randomIdx), ...items.slice(randomIdx + 1)];
+// };
+// removeRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // [1, 2, 3, 4, 5, 6, 7, 8, 10]
+// removeRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// // Slice and Dice2
+// // Return a new array with every item in array1 and array2.
+// const newArray = (arr1, arr2) => [...arr1, ...arr2];
+// return newArray([1, 2, 3], [4, 5, 6]); // [1, 2, 3, 4, 5, 6]
+
+// // Slice and Dice3
+// // Return a new object with all the keys and values
+// // from obj and a new key/value pair
+// function addKeyVal(obj, key, val) {
+//   const newObj = [...obj];
+//   newObj[key] = val;
+//   return newObj;
+// }
+
+// // Slice and Dice4
+// function removeVal(obj, key) {
+//   const newObj2 = { ...obj };
+//   delete newObj2[key];
+//   return newObj2;
+// }
+
+// // Slice and Dice5
+// // Combine two objects and return a new object
+// function combine(obje1, obje2) {
+//   return { ...obje1, ...obje2 };
+// }
+
+// // Slice and Dice6
+// // Return a new object with a modified key and value.
+// function update(object, key, val) {
+//   // return { object [key] : [val] }
+//   const newerObj = { ...object };
+//   newerObj[key] = val;
+//   return newerObj;
+// }
+// short hand Property Names
+function makePerson(firstName, LastName, age) {
+  return {
+    firstName,
+    LastName,
+    age,
+    isAlive: true,
+  };
 }
-// Refactored
-const filterOutOds = (...args) => args.filter((num) => num % 2 === 0);
+makePerson('Have', 'Sam', '36');
 
-// FindMin using Rest
-// function findMin(...nums) {
-//   return Math.min(...nums);
-// } // => 1
-const findMin = (...nums) => Math.min(...nums);
-findMin(1, 4, 12, -3); // -3
-findMin(1, -1); // -1
-findMin(3, 1); // 1
-
-// FindMin using Rest
-const mergeObjects = (obj1, obj2) => ({ ...obj1, ...obj2 });
-
-mergeObjects({ a: 1, b: 2 }, { c: 3, d: 4 });
-// => { a: 1, b: 2, c: 3, d: 4 }
-
-// Double and return args
-const doubleAndReturnArgs = (arr, ...nums) => ([...arr, ...nums.map((num) => num * 2)]);
-
-doubleAndReturnArgs([1, 2, 3], 4, 4); // [2, 4, 6, 8, 8]
-doubleAndReturnArgs([2], 10, 4); // [4, 20, 8]
-
-/** remove a random element in the items array
-and return a new array without that item. */
-// Slice and Dice1
-const removeRandom = (items) => {
-  const randomIdx = Math.floor(Math.random() * items.length);
-  return [...items.slice(0, randomIdx), ...items.slice(randomIdx + 1)];
+// Shorthand Methods
+const mathStuff = {
+  y: 200,
+  add(w, k) {
+    return w + k;
+  },
+  sbutract(o, p) {
+    return o - p;
+  },
 };
-removeRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // [1, 2, 3, 4, 5, 6, 7, 8, 10]
-removeRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+mathStuff('add', 2, 3); // 5
+mathStuff('subtract', 5, 2); // 3
 
-// Slice and Dice2
-// Return a new array with every item in array1 and array2.
-const newArray = (arr1, arr2) => [...arr1, ...arr2];
-return newArray([1, 2, 3], [4, 5, 6]); // [1, 2, 3, 4, 5, 6]
+// computered Properties
+// const color = {
+//   periwinkle: '9c88ff',
+//   '9c88ff': 'periwinkle',
+// };
 
-// Slice and Dice3
-// Return a new object with all the keys and values
-// from obj and a new key/value pair
-function addKeyVal(obj, key, val) {
-  const newObj = [...obj];
-  newObj[key] = val;
-  return newObj;
+// function makeColor(name, hex) {
+//   return {
+//     name: hex,
+//     hex: name
+//   };
+// }
+
+// Earlier Version
+// function makeColor(name, hex) {
+//   const color = {};
+//   color[name] = hex;
+//   color[hex] = name;
+//   return color;
+// }
+
+// Computed Property Names Version
+function makeColor(name, hex) {
+  return {
+    [name]: hex,
+    [hex]: name
+  }
 }
 
-// Slice and Dice4
-function removeVal(obj, key) {
-  const newObj2 = { ...obj };
-  delete newObj2[key];
-  return newObj2;
-}
+const mystery = {
+  [4 * 2]: 'Eight',
+};
+// {8: 'Eight'}
 
-// Slice and Dice5
-// Combine two objects and return a new object
-function combine(obje1, obje2) {
-  return { ...obje1, ...obje2 };
-}
-
-// Slice and Dice6
-// Return a new object with a modified key and value.
-function update(object, key, val) {
-  // return { object [key] : [val] }
-  const newerObj = { ...object };
-  newerObj[key] = val;
-  return newerObj;
-}
+const obj = {};
+obj[40 * 2] = 'hello';
+// {80: 'hello'}
