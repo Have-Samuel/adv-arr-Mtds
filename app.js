@@ -413,14 +413,14 @@
 // }
 
 // const createInstructor = (firstName, lastName) => ({ firstName, lastName });
-function createInstructor(firstName, lastName) {
-  return {
-    firstName,
-    lastName,
-  };
-}
+// function createInstructor(firstName, lastName) {
+//   return {
+//     firstName,
+//     lastName,
+//   };
+// }
 
-createInstructor('Have', 'Peace');
+// createInstructor('Have', 'Peace');
 
 // // COMPUTED PROPERTY NAMES
 // // Earlier Version
@@ -463,19 +463,41 @@ createInstructor('Have', 'Peace');
 // };
 // CREATE ANIMAL FUNCTION
 // EARLIER VERSION
-const d = createAnimal('dog', 'bark', 'Woooof!');
-// {species: "dog", bark: ƒ}
-d.bark(); // "Woooof!"
+// const d = createAnimal('dog', 'bark', 'Woooof!');
+// // {species: "dog", bark: ƒ}
+// d.bark(); // "Woooof!"
 
-const s = createAnimal('sheep', 'bleet', 'BAAAAaaaa');
-// {species: "sheep", bleet: ƒ}
-s.bleet(); // "BAAAAaaaa"
+// const s = createAnimal('sheep', 'bleet', 'BAAAAaaaa');
+// // {species: "sheep", bleet: ƒ}
+// s.bleet(); // "BAAAAaaaa"
 
-function createAnimal(species, verb, noise) {
-  return {
-    species,
-    [verb]() {
-      return noise;
-    },
-  };
-}
+// function createAnimal(species, verb, noise) {
+//   return {
+//     species,
+//     [verb]() {
+//       return noise;
+//     },
+//   };
+// }
+
+// DESTRUCTURING
+// EARLIER VERSION
+const teaOrder = {
+  variety: 'oolong',
+  teaName: 'Winter Sprout',
+  origin: 'Taiwan',
+  price: 12.99,
+  hasCaffeine: true,
+  quantity: 3,
+};
+
+// const price = teaOrder.price;
+// const variety = teaOrder.variety;
+// const quantity = teaOrder.quantity;
+
+// ES2015 VERSION
+// const { price, variety, quantity } = teaOrder;
+// Using spread operator
+const {
+  price, quantity, teaName, ...details
+} = teaOrder;
