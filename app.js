@@ -484,11 +484,12 @@
 // EARLIER VERSION
 const teaOrder = {
   variety: 'oolong',
-  teaName: 'Winter Sprout',
+  // teaName: 'Winter Sprout',
   origin: 'Taiwan',
   price: 12.99,
   hasCaffeine: true,
   quantity: 3,
+  teaTemp: 600,
 };
 
 // const price = teaOrder.price;
@@ -501,3 +502,28 @@ const teaOrder = {
 const {
   price, quantity, teaName, ...details
 } = teaOrder;
+// More destructuring
+// Default values
+const { teaTemp = 900 } = teaOrder;
+// Renaming variables
+const { teaName: Chai = 'Milky' } = teaOrder;
+// milky is the default value\
+
+// Multplying values
+function checkout(tea) {
+  const { quantity = 1, price } = tea;
+  return quantity * price;
+}
+
+checkout(teaOrder);
+
+// Dafault values
+const order1 = {
+  variety: 'green',
+  teaName: 'Winter needle',
+  origin: 'Taiwan',
+  price: 12.99,
+  hasCaffeine: true,
+};
+
+checkout(order1); // 12.99
