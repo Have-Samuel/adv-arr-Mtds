@@ -527,3 +527,24 @@ const order1 = {
 };
 
 checkout(order1); // 12.99
+
+// Destructuring Arrays
+const students = [
+  { name: 'Have', gpa: 4.6 },
+  { name: 'Peace', gpa: 4.4 },
+  { name: 'Adrine', gpa: 4.0 },
+  { name: 'Sam', gpa: 3.8 },
+  { name: 'Micheal', gpa: 3.4 },
+  { name: 'John', gpa: 3.2 },
+];
+
+// const [ topStuent, secondBest, , fourthStudent ] = students;
+// topStudent = {name: "Have", gpa: 4.6}
+// secondBest = {name: "Peace", gpa: 4.4}
+// fourthStudent = {name: "Sam", gpa: 3.8}
+
+// Using spread operator
+const [ first, ...others ] = students;
+// first = {name: "Have", gpa: 4.6}
+// others = [{name: "Peace", gpa: 4.4}, {name: "Adrine", gpa: 4},
+// {name: "Sam", gpa: 3.8}, {name: "Micheal", gpa: 3.4}, {name: "John", gpa: 3.2}]
