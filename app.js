@@ -341,7 +341,7 @@
 //   newerObj[key] = val;
 //   return newerObj;
 // }
-
+// short hand Property Names
 function makePerson(firstName, LastName, age) {
   return {
     firstName,
@@ -351,3 +351,16 @@ function makePerson(firstName, LastName, age) {
   };
 }
 makePerson('Have', 'Sam', '36');
+
+// Shorthand Methods
+const mathStuff = {
+  y: 200,
+  add(w, k) {
+    return w + k;
+  },
+  sbutract(o, p) {
+    return o - p;
+  },
+};
+mathStuff('add', 2, 3); // 5
+mathStuff('subtract', 5, 2); // 3
