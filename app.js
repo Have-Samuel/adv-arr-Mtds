@@ -342,63 +342,140 @@
 //   return newerObj;
 // }
 // short hand Property Names
-function makePerson(firstName, LastName, age) {
-  return {
-    firstName,
-    LastName,
-    age,
-    isAlive: true,
-  };
-}
-makePerson('Have', 'Sam', '36');
-
-// Shorthand Methods
-const mathStuff = {
-  y: 200,
-  add(w, k) {
-    return w + k;
-  },
-  sbutract(o, p) {
-    return o - p;
-  },
-};
-mathStuff('add', 2, 3); // 5
-mathStuff('subtract', 5, 2); // 3
-
-// computered Properties
-// const color = {
-//   periwinkle: '9c88ff',
-//   '9c88ff': 'periwinkle',
-// };
-
-// function makeColor(name, hex) {
+// function makePerson(firstName, LastName, age) {
 //   return {
-//     name: hex,
-//     hex: name
+//     firstName,
+//     LastName,
+//     age,
+//     isAlive: true,
 //   };
 // }
+// makePerson('Have', 'Sam', '36');
 
-// Earlier Version
+// // Shorthand Methods
+// const mathStuff = {
+//   y: 200,
+//   add(w, k) {
+//     return w + k;
+//   },
+//   sbutract(o, p) {
+//     return o - p;
+//   },
+// };
+// mathStuff('add', 2, 3); // 5
+// mathStuff('subtract', 5, 2); // 3
+
+// // computered Properties
+// // const color = {
+// //   periwinkle: '9c88ff',
+// //   '9c88ff': 'periwinkle',
+// // };
+
+// // function makeColor(name, hex) {
+// //   return {
+// //     name: hex,
+// //     hex: name
+// //   };
+// // }
+
+// // Earlier Version
+// // function makeColor(name, hex) {
+// //   const color = {};
+// //   color[name] = hex;
+// //   color[hex] = name;
+// //   return color;
+// // }
+
+// // Computed Property Names Version
 // function makeColor(name, hex) {
-//   const color = {};
-//   color[name] = hex;
-//   color[hex] = name;
-//   return color;
+//   return {
+//     [name]: hex,
+//     [hex]: name
+//   }
 // }
 
-// Computed Property Names Version
-function makeColor(name, hex) {
+// const mystery = {
+//   [4 * 2]: 'Eight',
+// };
+// // {8: 'Eight'}
+
+// const obj = {};
+// obj[40 * 2] = 'hello';
+// // {80: 'hello'}
+
+// // REFACTORING
+// Same keys and values
+// function createInstructor(firstName, lastName){
+//   return {
+//     firstName: firstName,
+//     lastName: lastName
+//   }
+// }
+
+// const createInstructor = (firstName, lastName) => ({ firstName, lastName });
+function createInstructor(firstName, lastName) {
   return {
-    [name]: hex,
-    [hex]: name
-  }
+    firstName,
+    lastName,
+  };
 }
 
-const mystery = {
-  [4 * 2]: 'Eight',
-};
-// {8: 'Eight'}
+createInstructor('Have', 'Peace');
 
-const obj = {};
-obj[40 * 2] = 'hello';
-// {80: 'hello'}
+// // COMPUTED PROPERTY NAMES
+// // Earlier Version
+// var favoriteNumber = 42;
+
+// var instructor = {
+//   firstName: "Colt"
+// }
+
+// instructor[favoriteNumber] = "That is my favorite!"
+
+// ES2015 Version
+// let favoriteNumber = 42;
+
+// const instructor = {
+//   firstName: 'Colt',
+//   [favoriteNumber]: 'That is my favorite!';
+// };
+
+// EARLIER VERSION
+// var instructor = {
+//   firstName: "Colt",
+//   sayHi: function(){
+//     return "Hi!";
+//   },
+//   sayBye: function(){
+//     return this.firstName + " says bye!";
+//   }
+// }
+
+// ES2015 VERSION
+// const instructor = {
+//   firstName: 'Colt',
+//   sayHi() {
+//     return 'Hi';
+//   },
+//   sayBye() {
+//     return `${this.firstName} says bye!`;
+//   },
+// };
+// CREATE ANIMAL FUNCTION
+// EARLIER VERSION
+const d = createAnimal('dog', 'bark', 'Woooof!');
+// {species: "dog", bark: ƒ}
+d.bark(); // "Woooof!"
+
+const s = createAnimal('sheep', 'bleet', 'BAAAAaaaa');
+// {species: "sheep", bleet: ƒ}
+s.bleet(); // "BAAAAaaaa"
+
+function createAnimal(species, verb, noise) {
+  return {
+    species,
+    [verb]() {
+      return noise;
+    },
+  };
+}
