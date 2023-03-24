@@ -421,3 +421,21 @@ function createInstructor(firstName, lastName) {
 }
 
 createInstructor('Have', 'Peace');
+
+// // COMPUTED PROPERTY NAMES
+// // Earlier Version
+// var favoriteNumber = 42;
+
+// var instructor = {
+//   firstName: "Colt"
+// }
+
+// instructor[favoriteNumber] = "That is my favorite!"
+
+// ES2015 Version
+let favoriteNumber = 42;
+
+const instructor = {
+  firstName: 'Colt',
+  [favoriteNumber]: 'That is my favorite!';
+};
