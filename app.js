@@ -364,3 +364,41 @@ const mathStuff = {
 };
 mathStuff('add', 2, 3); // 5
 mathStuff('subtract', 5, 2); // 3
+
+// computered Properties
+// const color = {
+//   periwinkle: '9c88ff',
+//   '9c88ff': 'periwinkle',
+// };
+
+// function makeColor(name, hex) {
+//   return {
+//     name: hex,
+//     hex: name
+//   };
+// }
+
+// Earlier Version
+// function makeColor(name, hex) {
+//   const color = {};
+//   color[name] = hex;
+//   color[hex] = name;
+//   return color;
+// }
+
+// Computed Property Names Version
+function makeColor(name, hex) {
+  return {
+    [name]: hex,
+    [hex]: name
+  }
+}
+
+const mystery = {
+  [4 * 2]: 'Eight',
+};
+// {8: 'Eight'}
+
+const obj = {};
+obj[40 * 2] = 'hello';
+// {80: 'hello'}
