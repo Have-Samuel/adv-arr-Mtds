@@ -699,3 +699,14 @@ getUserData({firstName: 'Have', favoriteColor: 'purple'});
  // Your name is Have and you like purple
 getUserData({firstName: 'Have'}); // Your name is Have and you like green
 getUserData({favoriteColor: 'purple'}); // Your name is undefined and you like purple
+
+// *************************************
+// ARRAY DESTRUCTURING 1
+// *************************************
+// What does the following code return/print?
+let [first, second, third, four] = ['Maya', 'Marisa', 'Chi', 'Justine'];
+
+console.log(first); // Maya
+console.log(second); // Marisa
+console.log(third); // Chi
+console.log(four); // Justine
