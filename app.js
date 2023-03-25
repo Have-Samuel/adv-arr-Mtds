@@ -505,11 +505,15 @@
 // // More destructuring
 // // Default values
 // const { teaTemp = 900 } = teaOrder;
-// // Renaming variables
+// *************************************
+// RENAME VARIABLES
+// *************************************
 // const { teaName: Chai = 'Milky' } = teaOrder;
 // // milky is the default value\
 
-// // Multplying values
+// *************************************
+// MULITPLE OBJECTS
+// *************************************
 // function checkout(tea) {
 //   const { quantity = 1, price } = tea;
 //   return quantity * price;
@@ -528,7 +532,9 @@
 
 // checkout(order1); // 12.99
 
-// // Destructuring Arrays
+// *************************************
+// DESTRUCTURING ARRAYS
+// *************************************
 // const students = [
 //   { name: 'Have', gpa: 4.6 },
 //   { name: 'Peace', gpa: 4.4 },
@@ -543,13 +549,17 @@
 // secondBest = {name: "Peace", gpa: 4.4}
 // fourthStudent = {name: "Sam", gpa: 3.8}
 
-// Using spread operator
+// *************************************
+// USING SPREAD OPERATOR
+// *************************************
 // const [ first, ...others ] = students;
 // first = {name: "Have", gpa: 4.6}
 // others = [{name: "Peace", gpa: 4.4}, {name: "Adrine", gpa: 4},
 // {name: "Sam", gpa: 3.8}, {name: "Micheal", gpa: 3.4}, {name: "John", gpa: 3.2}]
 
-// Function Destrcuturing
+// *************************************
+// FUNCTION DESTRUCTURING
+// *************************************
 
 // const teaOrder1 = {
 //   variety: 'oolong',
@@ -560,14 +570,18 @@
 //   // quantity: 4,
 //   teaTemp: 600,
 // };
-// // Destrcuturing in function parameters
+// *************************************
+// DESTRUCTURING FUNCTION PARAMETERS
+// *************************************
 
 // function getTotal({ quantity: qty = 1, price }) {
 //   // const { quantity, price } = tea;
 //   return qty * price;
 // }
 
-// // Aonther Example
+// *************************************
+// ANOTHER EXAMPLE
+// *************************************
 // const longJumpResults = ['Tammy', 'Jessica', 'Violet'];
 // const swimMeetResults = ['Japan', 'France', 'Chile'];
 
@@ -577,7 +591,9 @@
 //   };
 // }
 
-// Nested Destructing
+// *************************************
+// NESTED DESTRUCTURING
+// *************************************
 const movie = {
   Title: 'Amadeus',
   Year: '1984',
@@ -611,7 +627,9 @@ const { Rated: { rating, advisory: noted } } = movie;
 
 // const { Ratings: [{ Value }] } = movie;
 // // '8.3/10'
-// Renaming
+// *************************************
+// RENAMING VARIABLES WITH DESTRUCTURING
+// *************************************
 const {
   Ratings: [
     { Value: Samuel },
@@ -624,3 +642,23 @@ const {
   ],
 } = movie;
 // Samuel '8.3/10'
+
+// *************************************
+// SWAPPING VARIABLES WITH DESTRUCTURING
+// *************************************
+let hus = 'Samuel';
+let wif = 'Sharlene';
+
+// EARLIER VERSION
+const mix = hus;
+hus = wif; // hus = 'Sharlene'
+wif = mix; // wif = 'Samuel'
+
+// ES2015 VERSION WITH DESTRUCTURING
+const both = [hus, wif];
+[hus, wif] = both; // hus = 'Sharlene', wif = 'Samuel'
+
+// *************************************
+// DESTRUCTURING WITH SWAP SYNTAX
+// *************************************
+[hus, wif] = [wif, hus]; // hus = 'Samuel', wif = 'Sharlene'
