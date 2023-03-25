@@ -480,63 +480,63 @@
 //   };
 // }
 
-// DESTRUCTURING
-// EARLIER VERSION
-const teaOrder = {
-  variety: 'oolong',
-  // teaName: 'Winter Sprout',
-  origin: 'Taiwan',
-  price: 12.99,
-  hasCaffeine: true,
-  quantity: 3,
-  teaTemp: 600,
-};
+// // DESTRUCTURING
+// // EARLIER VERSION
+// const teaOrder = {
+//   variety: 'oolong',
+//   // teaName: 'Winter Sprout',
+//   origin: 'Taiwan',
+//   price: 12.99,
+//   hasCaffeine: true,
+//   quantity: 3,
+//   teaTemp: 600,
+// };
 
-// const price = teaOrder.price;
-// const variety = teaOrder.variety;
-// const quantity = teaOrder.quantity;
+// // const price = teaOrder.price;
+// // const variety = teaOrder.variety;
+// // const quantity = teaOrder.quantity;
 
-// ES2015 VERSION
-// const { price, variety, quantity } = teaOrder;
-// Using spread operator
-const {
-  price, quantity, teaName, ...details
-} = teaOrder;
-// More destructuring
-// Default values
-const { teaTemp = 900 } = teaOrder;
-// Renaming variables
-const { teaName: Chai = 'Milky' } = teaOrder;
-// milky is the default value\
+// // ES2015 VERSION
+// // const { price, variety, quantity } = teaOrder;
+// // Using spread operator
+// const {
+//   price, quantity, teaName, ...details
+// } = teaOrder;
+// // More destructuring
+// // Default values
+// const { teaTemp = 900 } = teaOrder;
+// // Renaming variables
+// const { teaName: Chai = 'Milky' } = teaOrder;
+// // milky is the default value\
 
-// Multplying values
-function checkout(tea) {
-  const { quantity = 1, price } = tea;
-  return quantity * price;
-}
+// // Multplying values
+// function checkout(tea) {
+//   const { quantity = 1, price } = tea;
+//   return quantity * price;
+// }
 
-checkout(teaOrder);
+// checkout(teaOrder);
 
-// Dafault values
-const order1 = {
-  variety: 'green',
-  teaName: 'Winter needle',
-  origin: 'Taiwan',
-  price: 12.99,
-  hasCaffeine: true,
-};
+// // Dafault values
+// const order1 = {
+//   variety: 'green',
+//   teaName: 'Winter needle',
+//   origin: 'Taiwan',
+//   price: 12.99,
+//   hasCaffeine: true,
+// };
 
-checkout(order1); // 12.99
+// checkout(order1); // 12.99
 
-// Destructuring Arrays
-const students = [
-  { name: 'Have', gpa: 4.6 },
-  { name: 'Peace', gpa: 4.4 },
-  { name: 'Adrine', gpa: 4.0 },
-  { name: 'Sam', gpa: 3.8 },
-  { name: 'Micheal', gpa: 3.4 },
-  { name: 'John', gpa: 3.2 },
-];
+// // Destructuring Arrays
+// const students = [
+//   { name: 'Have', gpa: 4.6 },
+//   { name: 'Peace', gpa: 4.4 },
+//   { name: 'Adrine', gpa: 4.0 },
+//   { name: 'Sam', gpa: 3.8 },
+//   { name: 'Micheal', gpa: 3.4 },
+//   { name: 'John', gpa: 3.2 },
+// ];
 
 // const [ topStuent, secondBest, , fourthStudent ] = students;
 // topStudent = {name: "Have", gpa: 4.6}
@@ -544,7 +544,35 @@ const students = [
 // fourthStudent = {name: "Sam", gpa: 3.8}
 
 // Using spread operator
-const [ first, ...others ] = students;
+// const [ first, ...others ] = students;
 // first = {name: "Have", gpa: 4.6}
 // others = [{name: "Peace", gpa: 4.4}, {name: "Adrine", gpa: 4},
 // {name: "Sam", gpa: 3.8}, {name: "Micheal", gpa: 3.4}, {name: "John", gpa: 3.2}]
+
+// Function Destrcuturing
+
+const teaOrder1 = {
+  variety: 'oolong',
+  teaName: 'Winter Sprout',
+  origin: 'Taiwan',
+  price: 12.99,
+  hasCaffeine: true,
+  // quantity: 4,
+  teaTemp: 600,
+};
+// Destrcuturing in function parameters
+
+function getTotal({ quantity: qty = 1, price }) {
+  // const { quantity, price } = tea;
+  return qty * price;
+}
+
+// Aonther Example
+const longJumpResults = ['Tammy', 'Jessica', 'Violet'];
+const swimMeetResults = ['Japan', 'France', 'Chile'];
+
+function awardMedals([Gold, Silver, Bronze]) {
+  return {
+    Gold, Silver, Bronze,
+  };
+}
