@@ -760,3 +760,20 @@ const object = {
 };
 const { x, y } = object.nums;
 console.log(x, y); // 5 4
+
+// ***************************
+// ES5 Array Swap
+// ***************************
+var arr = [1, 2];
+var temp = [arr[0]];
+arr[0] = arr[1];
+arr[0] = temp;
+
+// ES2015 VERSION
+// One-line Array Swap with Destructuring
+const arr = [1,2];
+const temp = arr[0];
+[arr[0], arr[1]] = [arr[1], arr[0]]
+
+console.log(arr[0]); // 2
+console.log(temp); // 1 
