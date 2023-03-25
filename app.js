@@ -413,14 +413,14 @@
 // }
 
 // const createInstructor = (firstName, lastName) => ({ firstName, lastName });
-function createInstructor(firstName, lastName) {
-  return {
-    firstName,
-    lastName,
-  };
-}
+// function createInstructor(firstName, lastName) {
+//   return {
+//     firstName,
+//     lastName,
+//   };
+// }
 
-createInstructor('Have', 'Peace');
+// createInstructor('Have', 'Peace');
 
 // // COMPUTED PROPERTY NAMES
 // // Earlier Version
@@ -463,19 +463,202 @@ createInstructor('Have', 'Peace');
 // };
 // CREATE ANIMAL FUNCTION
 // EARLIER VERSION
-const d = createAnimal('dog', 'bark', 'Woooof!');
-// {species: "dog", bark: ƒ}
-d.bark(); // "Woooof!"
+// const d = createAnimal('dog', 'bark', 'Woooof!');
+// // {species: "dog", bark: ƒ}
+// d.bark(); // "Woooof!"
 
-const s = createAnimal('sheep', 'bleet', 'BAAAAaaaa');
-// {species: "sheep", bleet: ƒ}
-s.bleet(); // "BAAAAaaaa"
+// const s = createAnimal('sheep', 'bleet', 'BAAAAaaaa');
+// // {species: "sheep", bleet: ƒ}
+// s.bleet(); // "BAAAAaaaa"
 
-function createAnimal(species, verb, noise) {
-  return {
-    species,
-    [verb]() {
-      return noise;
-    },
-  };
-}
+// function createAnimal(species, verb, noise) {
+//   return {
+//     species,
+//     [verb]() {
+//       return noise;
+//     },
+//   };
+// }
+
+// // DESTRUCTURING
+// // EARLIER VERSION
+// const teaOrder = {
+//   variety: 'oolong',
+//   // teaName: 'Winter Sprout',
+//   origin: 'Taiwan',
+//   price: 12.99,
+//   hasCaffeine: true,
+//   quantity: 3,
+//   teaTemp: 600,
+// };
+
+// // const price = teaOrder.price;
+// // const variety = teaOrder.variety;
+// // const quantity = teaOrder.quantity;
+
+// // ES2015 VERSION
+// // const { price, variety, quantity } = teaOrder;
+// // Using spread operator
+// const {
+//   price, quantity, teaName, ...details
+// } = teaOrder;
+// // More destructuring
+// // Default values
+// const { teaTemp = 900 } = teaOrder;
+// *************************************
+// RENAME VARIABLES
+// *************************************
+// const { teaName: Chai = 'Milky' } = teaOrder;
+// // milky is the default value\
+
+// *************************************
+// MULITPLE OBJECTS
+// *************************************
+// function checkout(tea) {
+//   const { quantity = 1, price } = tea;
+//   return quantity * price;
+// }
+
+// checkout(teaOrder);
+
+// // Dafault values
+// const order1 = {
+//   variety: 'green',
+//   teaName: 'Winter needle',
+//   origin: 'Taiwan',
+//   price: 12.99,
+//   hasCaffeine: true,
+// };
+
+// checkout(order1); // 12.99
+
+// *************************************
+// DESTRUCTURING ARRAYS
+// *************************************
+// const students = [
+//   { name: 'Have', gpa: 4.6 },
+//   { name: 'Peace', gpa: 4.4 },
+//   { name: 'Adrine', gpa: 4.0 },
+//   { name: 'Sam', gpa: 3.8 },
+//   { name: 'Micheal', gpa: 3.4 },
+//   { name: 'John', gpa: 3.2 },
+// ];
+
+// const [ topStuent, secondBest, , fourthStudent ] = students;
+// topStudent = {name: "Have", gpa: 4.6}
+// secondBest = {name: "Peace", gpa: 4.4}
+// fourthStudent = {name: "Sam", gpa: 3.8}
+
+// *************************************
+// USING SPREAD OPERATOR
+// *************************************
+// const [ first, ...others ] = students;
+// first = {name: "Have", gpa: 4.6}
+// others = [{name: "Peace", gpa: 4.4}, {name: "Adrine", gpa: 4},
+// {name: "Sam", gpa: 3.8}, {name: "Micheal", gpa: 3.4}, {name: "John", gpa: 3.2}]
+
+// *************************************
+// FUNCTION DESTRUCTURING
+// *************************************
+
+// const teaOrder1 = {
+//   variety: 'oolong',
+//   teaName: 'Winter Sprout',
+//   origin: 'Taiwan',
+//   price: 12.99,
+//   hasCaffeine: true,
+//   // quantity: 4,
+//   teaTemp: 600,
+// };
+// *************************************
+// DESTRUCTURING FUNCTION PARAMETERS
+// *************************************
+
+// function getTotal({ quantity: qty = 1, price }) {
+//   // const { quantity, price } = tea;
+//   return qty * price;
+// }
+
+// *************************************
+// ANOTHER EXAMPLE
+// *************************************
+// const longJumpResults = ['Tammy', 'Jessica', 'Violet'];
+// const swimMeetResults = ['Japan', 'France', 'Chile'];
+
+// function awardMedals([Gold, Silver, Bronze]) {
+//   return {
+//     Gold, Silver, Bronze,
+//   };
+// }
+
+// *************************************
+// NESTED DESTRUCTURING
+// *************************************
+// const movie = {
+//   Title: 'Amadeus',
+//   Year: '1984',
+//   Rated: {
+//     rating: 'R',
+//     advisory: 'Rated R for brief nudity',
+//   },
+//   Released: '19 Sept 1984',
+//   Runtime: '160 min',
+//   Genres: ['Biography', 'Drama', 'History', 'Music'],
+//   Director: 'Milos Forman',
+//   Writer: 'Peter Shaffer (original stage play), Peter Shaffer (original screenplay)',
+//   Actors: 'F Murray Abraham, Tom Hucle, Elizabeth Berridge, Roy Dotrice',
+//   Ratings: [
+//     { Source: 'Internet Movie Database', Value: '8.3/10' },
+//     { Source: 'Rotten Tomatoes', Value: '93%' },
+//     { Source: 'Metacritic', Value: '88/100' },
+//   ],
+//   Versions: [
+//     { version: 'Original Release', runtime: 161 },
+//     { version: "Director's Cut", runtime: 180 },
+//   ],
+// };
+
+// // const { Rated } = movie;
+// // const { rating, advisory } = Rated;
+// // // rating => 'R'
+// // // advisory => 'Rated R for brief nudity'
+
+// const { Rated: { rating, advisory: noted } } = movie;
+
+// // const { Ratings: [{ Value }] } = movie;
+// // // '8.3/10'
+// // *************************************
+// // RENAMING VARIABLES WITH DESTRUCTURING
+// // *************************************
+// const {
+//   Ratings: [
+//     { Value: Samuel },
+//     { Value: Justine }, // nested destructuring
+//     { Value: Treasure },
+//   ],
+//   Versions: [
+//     { runtime: myRuntime }, // nested destructuring
+//     { runtime: JsRuntime },
+//   ],
+// } = movie;
+// // Samuel '8.3/10'
+
+// // *************************************
+// // SWAPPING VARIABLES WITH DESTRUCTURING
+// // *************************************
+// let hus = 'Samuel';
+// let wif = 'Sharlene';
+
+// // EARLIER VERSION
+// const mix = hus;
+// hus = wif; // hus = 'Sharlene'
+// wif = mix; // wif = 'Samuel'
+
+// // ES2015 VERSION WITH DESTRUCTURING
+// const both = [hus, wif];
+// [hus, wif] = both; // hus = 'Sharlene', wif = 'Samuel'
+
+// // *************************************
+// // DESTRUCTURING WITH SWAP SYNTAX
+// // *************************************
+// [hus, wif] = [wif, hus]; // hus = 'Samuel', wif = 'Sharlene'
