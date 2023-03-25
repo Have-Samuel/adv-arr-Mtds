@@ -710,3 +710,20 @@ console.log(first); // Maya
 console.log(second); // Marisa
 console.log(third); // Chi
 console.log(four); // Justine
+
+// *************************************
+// ARRAY DESTRUCTURING 2
+// *************************************
+// What does the following code return/print?
+let [raindrops, whiskers, ...aFewOfMyFavoriteThings] = [
+  'Raindrops on roses',
+  'whiskers on kittens',
+  'Bright copper kettles',
+  'warm woolen mittens',
+  'Brown paper packages tied up with strings',
+];
+console.log(raindrops); // Raindrops on roses
+console.log(whiskers); // whiskers on kittens
+console.log(aFewOfMyFavoriteThings);
+// ['Bright copper kettles', 'warm woolen mittens', 'Brown paper packages tied up with strings']
+
