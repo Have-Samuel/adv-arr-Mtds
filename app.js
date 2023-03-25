@@ -686,3 +686,16 @@ let planetFacts = {
 let { numPlanets, ...discoveryYears } = planetFacts;
 
 console.log(discoveryYears); // {yearNeptuneDiscovered: 1846, yearMarsDiscovered: 1659}
+
+// *************************************
+// OBJECT DESTRUCTURING 3
+// *************************************
+// What does the following code return/print?
+function getUserData({firstName, favoriteColor = 'green'}) {
+  return `Your name is ${firstName} and you like ${favoriteColor}`;
+}
+getUserData({}); // Your name is undefined and you like green
+getUserData({firstName: 'Have', favoriteColor: 'purple'});
+ // Your name is Have and you like purple
+getUserData({firstName: 'Have'}); // Your name is Have and you like green
+getUserData({favoriteColor: 'purple'}); // Your name is undefined and you like purple
