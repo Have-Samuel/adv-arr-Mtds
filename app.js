@@ -736,3 +736,27 @@ let nums = [29, 90, 89];
 [nums[1], nums[2]] = [nums[2], nums[1]];
 
 console.log(nums); // [29, 89, 90];
+
+// *************************************
+// ES2015 REFACTORING
+// *************************************
+// In this exercise, you’ll refactor some ES5 code into ES2015.
+// ES5 Assigning Variables to Object Properties
+var object = {
+  nums: {
+    x: 5,
+    y:4,
+  }
+};
+var x = object.nums.x;
+var y = object.nums.y;
+
+// ES2015 Object Destructuring
+const object = {
+  nums: {
+    x: 5,
+    y: 4,
+  },
+};
+const { x, y } = object.nums;
+console.log(x, y); // 5 4
