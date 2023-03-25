@@ -666,9 +666,23 @@
 // // *************************************
 // OBJECT DESTRUCTURING 1
 // *************************************
-// Waht is the following code return/print?
+// What is the following code return/print?
 const facts = { numPlanets: 8, yearNeptuneDiscovered: 1846 };
 const { numPlanets, yearNeptuneDiscovered } = facts;
 
 // console.log(numPlanets); // 8
 // console.log(yearNeptuneDiscovered); // 1846
+
+// *************************************
+// OBJECT DESTRUCTURING 2
+// *************************************
+// What does the following code return/print?
+let planetFacts = {
+  numPlanets: 8,
+  yearNeptuneDiscovered: 1846,
+  yearMarsDiscovered: 1659,
+};
+
+let { numPlanets, ...discoveryYears } = planetFacts;
+
+console.log(discoveryYears); // {yearNeptuneDiscovered: 1846, yearMarsDiscovered: 1659}
