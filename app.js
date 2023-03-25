@@ -662,3 +662,13 @@
 // // DESTRUCTURING WITH SWAP SYNTAX
 // // *************************************
 // [hus, wif] = [wif, hus]; // hus = 'Samuel', wif = 'Sharlene'
+
+// // *************************************
+// OBJECT DESTRUCTURING 1
+// *************************************
+// Waht is the following code return/print?
+const facts = { numPlanets: 8, yearNeptuneDiscovered: 1846 };
+const { numPlanets, yearNeptuneDiscovered } = facts;
+
+// console.log(numPlanets); // 8
+// console.log(yearNeptuneDiscovered); // 1846
