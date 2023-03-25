@@ -551,28 +551,76 @@
 
 // Function Destrcuturing
 
-const teaOrder1 = {
-  variety: 'oolong',
-  teaName: 'Winter Sprout',
-  origin: 'Taiwan',
-  price: 12.99,
-  hasCaffeine: true,
-  // quantity: 4,
-  teaTemp: 600,
+// const teaOrder1 = {
+//   variety: 'oolong',
+//   teaName: 'Winter Sprout',
+//   origin: 'Taiwan',
+//   price: 12.99,
+//   hasCaffeine: true,
+//   // quantity: 4,
+//   teaTemp: 600,
+// };
+// // Destrcuturing in function parameters
+
+// function getTotal({ quantity: qty = 1, price }) {
+//   // const { quantity, price } = tea;
+//   return qty * price;
+// }
+
+// // Aonther Example
+// const longJumpResults = ['Tammy', 'Jessica', 'Violet'];
+// const swimMeetResults = ['Japan', 'France', 'Chile'];
+
+// function awardMedals([Gold, Silver, Bronze]) {
+//   return {
+//     Gold, Silver, Bronze,
+//   };
+// }
+
+// Nested Destructing
+const movie = {
+  Title: 'Amadeus',
+  Year: '1984',
+  Rated: {
+    rating: 'R',
+    advisory: 'Rated R for brief nudity',
+  },
+  Released: '19 Sept 1984',
+  Runtime: '160 min',
+  Genres: ['Biography', 'Drama', 'History', 'Music'],
+  Director: 'Milos Forman',
+  Writer: 'Peter Shaffer (original stage play), Peter Shaffer (original screenplay)',
+  Actors: 'F Murray Abraham, Tom Hucle, Elizabeth Berridge, Roy Dotrice',
+  Ratings: [
+    { Source: 'Internet Movie Database', Value: '8.3/10' },
+    { Source: 'Rotten Tomatoes', Value: '93%' },
+    { Source: 'Metacritic', Value: '88/100' },
+  ],
+  Versions: [
+    { version: 'Original Release', runtime: 161 },
+    { version: "Director's Cut", runtime: 180 },
+  ],
 };
-// Destrcuturing in function parameters
 
-function getTotal({ quantity: qty = 1, price }) {
-  // const { quantity, price } = tea;
-  return qty * price;
-}
+// const { Rated } = movie;
+// const { rating, advisory } = Rated;
+// // rating => 'R'
+// // advisory => 'Rated R for brief nudity'
 
-// Aonther Example
-const longJumpResults = ['Tammy', 'Jessica', 'Violet'];
-const swimMeetResults = ['Japan', 'France', 'Chile'];
+const { Rated: { rating, advisory: noted } } = movie;
 
-function awardMedals([Gold, Silver, Bronze]) {
-  return {
-    Gold, Silver, Bronze,
-  };
-}
+// const { Ratings: [{ Value }] } = movie;
+// // '8.3/10'
+// Renaming
+const {
+  Ratings: [
+    { Value: Samuel },
+    { Value: Justine }, // nested destructuring
+    { Value: Treasure },
+  ],
+  Versions: [
+    { runtime: myRuntime }, // nested destructuring
+    { runtime: JsRuntime },
+  ],
+} = movie;
+// Samuel '8.3/10'
