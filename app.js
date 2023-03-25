@@ -727,3 +727,12 @@ console.log(whiskers); // whiskers on kittens
 console.log(aFewOfMyFavoriteThings);
 // ['Bright copper kettles', 'warm woolen mittens', 'Brown paper packages tied up with strings']
 
+// *************************************
+// ARRAY DESTRUCTURING 3
+// *************************************
+// What does the following code return/print?
+let nums = [29, 90, 89];
+
+[nums[1], nums[2]] = [nums[2], nums[1]];
+
+console.log(nums); // [29, 89, 90];
