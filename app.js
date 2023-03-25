@@ -777,3 +777,18 @@ const temp = arr[0];
 
 console.log(arr[0]); // 2
 console.log(temp); // 1 
+
+// ***************************
+//RaceResults()
+// ***************************
+// Write a function called raceResults which accepts a single array argument.
+// It should return an object with the keys first, second, third, and rest.
+// first should be the first element in the array,
+//second should be the second element in the array,
+// third should be the third element in the array,
+// and rest should be all other elements in the array.
+
+const raceResults = ([first, second, third, ...rest]) => ({first, second, third, rest});
+
+// {  first: 'Have',  second: 'Justine',  third: 'Adrine',  rest: ['Walker']}
+raceResults(['Have', 'Justine', 'Adrine', 'Walker']);
