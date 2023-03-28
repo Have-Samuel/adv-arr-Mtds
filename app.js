@@ -903,34 +903,34 @@
 // const bannedHashTags = new Set('nofilter', 'justsaying', 'winning', 'yolo');
 // Set(8){'n', 'o', 'f', 'i', 'l',…}
 
-const bannedHashTags = new Set(['nofilter', 'justsaying', 'winning', 'yolo']);
-// ADDING
-bannedHashTags.add('swag');
-// Set(7){"nofilter", "justsaying", "winning", "yolo", "swag"}
-bannedHashTags.add('selfie');
-// Set(8){"nofilter", "justsaying", "winning", "yolo", "swag", "selfie"}
-bannedHashTags.add('bestLife').add('Whatsapp');
-// Set(9){"nofilter", "justsaying", "winning", "yolo", "swag", "selfie", "bestLife", "Whatsapp"}
+// const bannedHashTags = new Set(['nofilter', 'justsaying', 'winning', 'yolo']);
+// // ADDING
+// bannedHashTags.add('swag');
+// // Set(7){"nofilter", "justsaying", "winning", "yolo", "swag"}
+// bannedHashTags.add('selfie');
+// // Set(8){"nofilter", "justsaying", "winning", "yolo", "swag", "selfie"}
+// bannedHashTags.add('bestLife').add('Whatsapp');
+// // Set(9){"nofilter", "justsaying", "winning", "yolo", "swag", "selfie", "bestLife", "Whatsapp"}
 
-// *************************************
-// Has
-// *************************************
-bannedHashTags.has('nofilter'); // true
-bannedHashTags.has('mother'); // false
+// // *************************************
+// // Has
+// // *************************************
+// bannedHashTags.has('nofilter'); // true
+// bannedHashTags.has('mother'); // false
 
-// *************************************
-// Delete
-// *************************************
-bannedHashTags.delete('nofilter'); // true
-bannedHashTags.delete('Have'); // false
+// // *************************************
+// // Delete
+// // *************************************
+// bannedHashTags.delete('nofilter'); // true
+// bannedHashTags.delete('Have'); // false
 
-// **************************************
-// CLEAR
-// **************************************
-bannedHashTags.clear(); // Set(0){}
-// Clears the whole Set
+// // **************************************
+// // CLEAR
+// // **************************************
+// bannedHashTags.clear(); // Set(0){}
+// // Clears the whole Set
 
-// ************************
+// // ************************
 // ITERATING OVER hashTags and removing duplicates
 // ************************
 // const filterHashTags = (tags) => {
@@ -940,27 +940,28 @@ bannedHashTags.clear(); // Set(0){}
 
 // const haveTags = ['nofilter', 'justsaying', 'winning', 'yolo', 'swag', 'selfie', 'bestLife', 'Whatsapp']; filterHashTags(haveTags);
 // filterHashTags(haveTags);
-// // (4)['swag', 'selfie', 'bestLife', 'Whatsapp']
-
-// ************************
-// USING INCLUDES
-// ************************
-const filterHashTags = (tags) => {
-  const bannedHashTags = [
-    'nofilter',
-    'justsaying',
-    'winning',
-    'yolo'];
-  return tags.filter((tag) => !bannedHashTags.includes(tag));
-};
-
-const haveTags = ['nofilter', 'justsaying', 'winning', 'yolo', 'swag', 'selfie', 'bestLife', 'Whatsapp']; filterHashTags(haveTags);
-filterHashTags(haveTags);
 // (4)['swag', 'selfie', 'bestLife', 'Whatsapp']
 
-const ages = [4, 15, 1, 12, 2, 3, 9, 8, 7, 6, 5, 4, 3, 2, 1];
-// new Set(ages);
-// Set(9){4, 15, 1, 12, 2, 3, 9, 8, 7}
+// // ************************
+// // USING INCLUDES
+// // ************************
+// const filterHashTags = (tags) => {
+//   const bannedHashTags = [
+//     'nofilter',
+//     'justsaying',
+//     'winning',
+//     'yolo'];
+//   return tags.filter((tag) => !bannedHashTags.includes(tag));
+// };
 
-// Usinfg it again as an array
-[...new Set(ages)];
+// const haveTags = ['nofilter', 'justsaying',
+// 'winning', 'yolo', 'swag', 'selfie', 'bestLife', 'Whatsapp']; filterHashTags(haveTags);
+// filterHashTags(haveTags);
+// // (4)['swag', 'selfie', 'bestLife', 'Whatsapp']
+
+// const ages = [4, 15, 1, 12, 2, 3, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+// // new Set(ages);
+// // Set(9){4, 15, 1, 12, 2, 3, 9, 8, 7}
+
+// // Usinfg it again as an array
+// [...new Set(ages)];
