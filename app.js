@@ -796,57 +796,57 @@
 // *****************************
 // MAPs and SETS
 // *****************************
-const myMap = new Map();
-myMap.set(5, 'FIVE');
-myMap.set('5', 'FIVE STRING');
+// const myMap = new Map();
+// myMap.set(5, 'FIVE');
+// myMap.set('5', 'FIVE STRING');
 
-// To Get the value of a key
-// myMap.get(5) // FIVE
-// myMap.get('5') // FIVE STRING
+// // To Get the value of a key
+// // myMap.get(5) // FIVE
+// // myMap.get('5') // FIVE STRING
 
-// Getting Arrays of Keys and Values
-const emptyArray = [];
-myMap.set(emptyArray, 'Empty Array');
-// myMap.get(emptyArray); // Empty Array
+// // Getting Arrays of Keys and Values
+// const emptyArray = [];
+// myMap.set(emptyArray, 'Empty Array');
+// // myMap.get(emptyArray); // Empty Array
 
-myMap.set(true, 'TRUEEE!!');
+// myMap.set(true, 'TRUEEE!!');
 
-// *************************************
-// USING FUNCTIONS AS KEYS IN MAPS
-// *************************************
-const sub = (e, t) => e - t;
-const div = (e, t) => e / t;
+// // *************************************
+// // USING FUNCTIONS AS KEYS IN MAPS
+// // *************************************
+// const sub = (e, t) => e - t;
+// const div = (e, t) => e / t;
 
-const funcCalls = new Map();
-funcCalls.set(sub, 0);
-funcCalls.set(div, 0);
+// const funcCalls = new Map();
+// funcCalls.set(sub, 0);
+// funcCalls.set(div, 0);
 
-funcCalls.set(sub, 5); //
-funcCalls.set(div, 6);// 6
+// funcCalls.set(sub, 5); //
+// funcCalls.set(div, 6);// 6
 
-// *************************************
-// USING ARRAYS AS KEYS IN MAPS
-// *************************************
-const beetleArray = [
-  ['The Beatles', 'Sgt. Pepper'],
-  [4, 'Revolver'],
-  ['beatles', 'Abbey Road'],
-  ['Beatles', 'Let It Be'],
-  ['cone', 'Help!'],
-  [9, 'Rubber Soul'],
-];
+// // *************************************
+// // USING ARRAYS AS KEYS IN MAPS
+// // *************************************
+// const beetleArray = [
+//   ['The Beatles', 'Sgt. Pepper'],
+//   [4, 'Revolver'],
+//   ['beatles', 'Abbey Road'],
+//   ['Beatles', 'Let It Be'],
+//   ['cone', 'Help!'],
+//   [9, 'Rubber Soul'],
+// ];
 
-const beetleMap = new Map(beetleArray);
-// beetleMap();
-// Map(6){"The Beatles" => "Let It Be",
-// 4 => "Revolver", "The Beatles" => "Abbey Road",
-// "The Beatles" => "Let It Be", "The Beatles" => "Help!",
-// 9 => "Rubber Soul"}
+// const beetleMap = new Map(beetleArray);
+// // beetleMap();
+// // Map(6){"The Beatles" => "Let It Be",
+// // 4 => "Revolver", "The Beatles" => "Abbey Road",
+// // "The Beatles" => "Let It Be", "The Beatles" => "Help!",
+// // 9 => "Rubber Soul"}
 
-// [...beetleMap];
-// [Array(2), Array(2), Array(2), Array(2), Array(2), Array(2)]
+// // [...beetleMap];
+// // [Array(2), Array(2), Array(2), Array(2), Array(2), Array(2)]
 
-beetleMap.set(200, 'FOX-200').set('child', '30-child');
+// beetleMap.set(200, 'FOX-200').set('child', '30-child');
 
 // *************************************
 // Has
@@ -873,3 +873,29 @@ beetleMap.set(200, 'FOX-200').set('child', '30-child');
 // *****************************
 // Key
 // *****************************
+
+// ************************
+// ITERATING OVER MAPS
+// ************************
+
+const beetleArray = [
+  ['The Beatles', 'Sgt. Pepper'],
+  [4, 'Revolver'],
+  ['beatles', 'Abbey Road'],
+  ['Beatles', 'Let It Be'],
+  ['cone', 'Help!'],
+  [9, 'Rubber Soul'],
+];
+
+const beetleMap = new Map(beetleArray);
+
+// ITERATING
+// Using forEach
+beetleMap.forEach((val, key) => {
+  console.log(`${key}=>${val}`);
+});
+
+// FOR OF
+for (const [key, val] of beetleMap) {
+  console.log(`${key} => ${val}`);
+}
