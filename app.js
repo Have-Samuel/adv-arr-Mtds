@@ -938,7 +938,8 @@
 //   return tags.filter((tag) => !bannedHashTags.has(tag));
 // };
 
-// const haveTags = ['nofilter', 'justsaying', 'winning', 'yolo', 'swag', 'selfie', 'bestLife', 'Whatsapp']; filterHashTags(haveTags);
+// const haveTags = ['nofilter', 'justsaying',
+// 'winning', 'yolo', 'swag', 'selfie', 'bestLife', 'Whatsapp']; filterHashTags(haveTags);
 // filterHashTags(haveTags);
 // (4)['swag', 'selfie', 'bestLife', 'Whatsapp']
 
@@ -967,17 +968,25 @@
 // [...new Set(ages)];
 
 // What does the following code return?
-new Set([1, 1, 2, 2, 3, 4]);
-// {1, 2, 3, 4}
+// new Set([1, 1, 2, 2, 3, 4]);
+// // {1, 2, 3, 4}
 
-// What does the following code return?
-[...new Set('referee')].join(''); // removes duplicates
-// 'ref'
+// // What does the following code return?
+// [...new Set('referee')].join(''); // removes duplicates
+// // 'ref'
 
-// What does the Map m look like after running the following code?
-const m = new Map();
-m.set([1, 2, 3], true);
-m.set([1, 2, 3], false);
+// // What does the Map m look like after running the following code?
+// const m = new Map();
+// m.set([1, 2, 3], true);
+// m.set([1, 2, 3], false);
 
 // 0: {Array(3) => true}
 // 1: {Array(3) => false}
+
+// Write a function called hasDuplicate which accepts an array
+// and returns true or false if that array contains a duplicate
+
+const hasDuplicate = (arr) => new Set(arr).size !== arr.length; // removes duplicates
+
+hasDuplicate([1, 3, 2, 1]); // true
+hasDuplicate([1, 5, -1, 4]); // false
