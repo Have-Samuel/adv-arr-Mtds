@@ -667,128 +667,301 @@
 // OBJECT DESTRUCTURING 1
 // *************************************
 // What is the following code return/print?
-const facts = { numPlanets: 8, yearNeptuneDiscovered: 1846 };
-const { numPlanets, yearNeptuneDiscovered } = facts;
+// const facts = { numPlanets: 8, yearNeptuneDiscovered: 1846 };
+// const { numPlanets, yearNeptuneDiscovered } = facts;
 
-// console.log(numPlanets); // 8
-// console.log(yearNeptuneDiscovered); // 1846
+// // console.log(numPlanets); // 8
+// // console.log(yearNeptuneDiscovered); // 1846
+
+// // *************************************
+// // OBJECT DESTRUCTURING 2
+// // *************************************
+// // What does the following code return/print?
+// let planetFacts = {
+//   numPlanets: 8,
+//   yearNeptuneDiscovered: 1846,
+//   yearMarsDiscovered: 1659,
+// };
+
+// let { numPlanets, ...discoveryYears } = planetFacts;
+
+// console.log(discoveryYears); // {yearNeptuneDiscovered: 1846, yearMarsDiscovered: 1659}
+
+// // *************************************
+// // OBJECT DESTRUCTURING 3
+// // *************************************
+// // What does the following code return/print?
+// function getUserData({firstName, favoriteColor = 'green'}) {
+//   return `Your name is ${firstName} and you like ${favoriteColor}`;
+// }
+// getUserData({}); // Your name is undefined and you like green
+// getUserData({firstName: 'Have', favoriteColor: 'purple'});
+//  // Your name is Have and you like purple
+// getUserData({firstName: 'Have'}); // Your name is Have and you like green
+// getUserData({favoriteColor: 'purple'}); // Your name is undefined and you like purple
+
+// // *************************************
+// // ARRAY DESTRUCTURING 1
+// // *************************************
+// // What does the following code return/print?
+// let [first, second, third, four] = ['Maya', 'Marisa', 'Chi', 'Justine'];
+
+// console.log(first); // Maya
+// console.log(second); // Marisa
+// console.log(third); // Chi
+// console.log(four); // Justine
+
+// // *************************************
+// // ARRAY DESTRUCTURING 2
+// // *************************************
+// // What does the following code return/print?
+// let [raindrops, whiskers, ...aFewOfMyFavoriteThings] = [
+//   'Raindrops on roses',
+//   'whiskers on kittens',
+//   'Bright copper kettles',
+//   'warm woolen mittens',
+//   'Brown paper packages tied up with strings',
+// ];
+// console.log(raindrops); // Raindrops on roses
+// console.log(whiskers); // whiskers on kittens
+// console.log(aFewOfMyFavoriteThings);
+// // ['Bright copper kettles', 'warm woolen mittens', 'Brown paper packages tied up with strings']
+
+// // *************************************
+// // ARRAY DESTRUCTURING 3
+// // *************************************
+// // What does the following code return/print?
+// let nums = [29, 90, 89];
+
+// [nums[1], nums[2]] = [nums[2], nums[1]];
+
+// console.log(nums); // [29, 89, 90];
+
+// // *************************************
+// // ES2015 REFACTORING
+// // *************************************
+// // In this exercise, you’ll refactor some ES5 code into ES2015.
+// // ES5 Assigning Variables to Object Properties
+// var object = {
+//   nums: {
+//     x: 5,
+//     y:4,
+//   }
+// };
+// var x = object.nums.x;
+// var y = object.nums.y;
+
+// // ES2015 Object Destructuring
+// const object = {
+//   nums: {
+//     x: 5,
+//     y: 4,
+//   },
+// };
+// const { x, y } = object.nums;
+// console.log(x, y); // 5 4
+
+// // ***************************
+// // ES5 Array Swap
+// // ***************************
+// var arr = [1, 2];
+// var temp = [arr[0]];
+// arr[0] = arr[1];
+// arr[0] = temp;
+
+// // ES2015 VERSION
+// // One-line Array Swap with Destructuring
+// const arr = [1,2];
+// const temp = arr[0];
+// [arr[0], arr[1]] = [arr[1], arr[0]]
+
+// console.log(arr[0]); // 2
+// console.log(temp); // 1
+
+// // ***************************
+// //RaceResults()
+// // ***************************
+// // Write a function called raceResults which accepts a single array argument.
+// // It should return an object with the keys first, second, third, and rest.
+// // first should be the first element in the array,
+// //second should be the second element in the array,
+// // third should be the third element in the array,
+// // and rest should be all other elements in the array.
+
+// const raceResults = ([first, second, third, ...rest]) => ({first, second, third, rest});
+
+// // {  first: 'Have',  second: 'Justine',  third: 'Adrine',  rest: ['Walker']}
+// raceResults(['Have', 'Justine', 'Adrine', 'Walker']);
+
+// *****************************
+// MAPs and SETS
+// *****************************
+// const myMap = new Map();
+// myMap.set(5, 'FIVE');
+// myMap.set('5', 'FIVE STRING');
+
+// // To Get the value of a key
+// // myMap.get(5) // FIVE
+// // myMap.get('5') // FIVE STRING
+
+// // Getting Arrays of Keys and Values
+// const emptyArray = [];
+// myMap.set(emptyArray, 'Empty Array');
+// // myMap.get(emptyArray); // Empty Array
+
+// myMap.set(true, 'TRUEEE!!');
+
+// // *************************************
+// // USING FUNCTIONS AS KEYS IN MAPS
+// // *************************************
+// const sub = (e, t) => e - t;
+// const div = (e, t) => e / t;
+
+// const funcCalls = new Map();
+// funcCalls.set(sub, 0);
+// funcCalls.set(div, 0);
+
+// funcCalls.set(sub, 5); //
+// funcCalls.set(div, 6);// 6
+
+// // *************************************
+// // USING ARRAYS AS KEYS IN MAPS
+// // *************************************
+// const beetleArray = [
+//   ['The Beatles', 'Sgt. Pepper'],
+//   [4, 'Revolver'],
+//   ['beatles', 'Abbey Road'],
+//   ['Beatles', 'Let It Be'],
+//   ['cone', 'Help!'],
+//   [9, 'Rubber Soul'],
+// ];
+
+// const beetleMap = new Map(beetleArray);
+// // beetleMap();
+// // Map(6){"The Beatles" => "Let It Be",
+// // 4 => "Revolver", "The Beatles" => "Abbey Road",
+// // "The Beatles" => "Let It Be", "The Beatles" => "Help!",
+// // 9 => "Rubber Soul"}
+
+// // [...beetleMap];
+// // [Array(2), Array(2), Array(2), Array(2), Array(2), Array(2)]
+
+// beetleMap.set(200, 'FOX-200').set('child', '30-child');
 
 // *************************************
-// OBJECT DESTRUCTURING 2
+// Has
 // *************************************
-// What does the following code return/print?
-let planetFacts = {
-  numPlanets: 8,
-  yearNeptuneDiscovered: 1846,
-  yearMarsDiscovered: 1659,
-};
-
-let { numPlanets, ...discoveryYears } = planetFacts;
-
-console.log(discoveryYears); // {yearNeptuneDiscovered: 1846, yearMarsDiscovered: 1659}
+// beetleMap.has('child'); // true
+// beetleMap.has(200); // true
+// beetleMap.has('CHILD'); // false
+// beetleMap.has(300); // false
 
 // *************************************
-// OBJECT DESTRUCTURING 3
+// Delete
 // *************************************
-// What does the following code return/print?
-function getUserData({firstName, favoriteColor = 'green'}) {
-  return `Your name is ${firstName} and you like ${favoriteColor}`;
-}
-getUserData({}); // Your name is undefined and you like green
-getUserData({firstName: 'Have', favoriteColor: 'purple'});
- // Your name is Have and you like purple
-getUserData({firstName: 'Have'}); // Your name is Have and you like green
-getUserData({favoriteColor: 'purple'}); // Your name is undefined and you like purple
+// beetleMap.delete('child'); // true
+// beetleMap.delete(200); // true
+// beetleMap.delete('CHILD'); // false
+// beetleMap.delete(300); // false
 
-// *************************************
-// ARRAY DESTRUCTURING 1
-// *************************************
-// What does the following code return/print?
-let [first, second, third, four] = ['Maya', 'Marisa', 'Chi', 'Justine'];
+// **************************************
+// CLEAR
+// **************************************
+// beetleMap.clear();
+// Clears the whole Map
 
-console.log(first); // Maya
-console.log(second); // Marisa
-console.log(third); // Chi
-console.log(four); // Justine
+// *****************************
+// Key
+// *****************************
 
-// *************************************
-// ARRAY DESTRUCTURING 2
-// *************************************
-// What does the following code return/print?
-let [raindrops, whiskers, ...aFewOfMyFavoriteThings] = [
-  'Raindrops on roses',
-  'whiskers on kittens',
-  'Bright copper kettles',
-  'warm woolen mittens',
-  'Brown paper packages tied up with strings',
-];
-console.log(raindrops); // Raindrops on roses
-console.log(whiskers); // whiskers on kittens
-console.log(aFewOfMyFavoriteThings);
-// ['Bright copper kettles', 'warm woolen mittens', 'Brown paper packages tied up with strings']
+// ************************
+// ITERATING OVER MAPS
+// ************************
 
-// *************************************
-// ARRAY DESTRUCTURING 3
-// *************************************
-// What does the following code return/print?
-let nums = [29, 90, 89];
+// const beetleArray = [
+//   ['The Beatles', 'Sgt. Pepper'],
+//   [4, 'Revolver'],
+//   ['beatles', 'Abbey Road'],
+//   ['Beatles', 'Let It Be'],
+//   ['cone', 'Help!'],
+//   [9, 'Rubber Soul'],
+// ];
 
-[nums[1], nums[2]] = [nums[2], nums[1]];
+// const beetleMap = new Map(beetleArray);
 
-console.log(nums); // [29, 89, 90];
+// // ITERATING
+// // Using forEach
+// beetleMap.forEach((val, key) => {
+//   console.log(`${key}=>${val}`);
+// });
 
-// *************************************
-// ES2015 REFACTORING
-// *************************************
-// In this exercise, you’ll refactor some ES5 code into ES2015.
-// ES5 Assigning Variables to Object Properties
-var object = {
-  nums: {
-    x: 5,
-    y:4,
-  }
-};
-var x = object.nums.x;
-var y = object.nums.y;
+// // FOR OF
+// for (const [key, val] of beetleMap) {
+//   console.log(`${key} => ${val}`);
+// }
 
-// ES2015 Object Destructuring
-const object = {
-  nums: {
-    x: 5,
-    y: 4,
-  },
-};
-const { x, y } = object.nums;
-console.log(x, y); // 5 4
+// const bannedHashTags = new Set('nofilter', 'justsaying', 'winning', 'yolo');
+// Set(8){'n', 'o', 'f', 'i', 'l',…}
 
-// ***************************
-// ES5 Array Swap
-// ***************************
-var arr = [1, 2];
-var temp = [arr[0]];
-arr[0] = arr[1];
-arr[0] = temp;
+// const bannedHashTags = new Set(['nofilter', 'justsaying', 'winning', 'yolo']);
+// // ADDING
+// bannedHashTags.add('swag');
+// // Set(7){"nofilter", "justsaying", "winning", "yolo", "swag"}
+// bannedHashTags.add('selfie');
+// // Set(8){"nofilter", "justsaying", "winning", "yolo", "swag", "selfie"}
+// bannedHashTags.add('bestLife').add('Whatsapp');
+// // Set(9){"nofilter", "justsaying", "winning", "yolo", "swag", "selfie", "bestLife", "Whatsapp"}
 
-// ES2015 VERSION
-// One-line Array Swap with Destructuring
-const arr = [1,2];
-const temp = arr[0];
-[arr[0], arr[1]] = [arr[1], arr[0]]
+// // *************************************
+// // Has
+// // *************************************
+// bannedHashTags.has('nofilter'); // true
+// bannedHashTags.has('mother'); // false
 
-console.log(arr[0]); // 2
-console.log(temp); // 1 
+// // *************************************
+// // Delete
+// // *************************************
+// bannedHashTags.delete('nofilter'); // true
+// bannedHashTags.delete('Have'); // false
 
-// ***************************
-//RaceResults()
-// ***************************
-// Write a function called raceResults which accepts a single array argument.
-// It should return an object with the keys first, second, third, and rest.
-// first should be the first element in the array,
-//second should be the second element in the array,
-// third should be the third element in the array,
-// and rest should be all other elements in the array.
+// // **************************************
+// // CLEAR
+// // **************************************
+// bannedHashTags.clear(); // Set(0){}
+// // Clears the whole Set
 
-const raceResults = ([first, second, third, ...rest]) => ({first, second, third, rest});
+// // ************************
+// ITERATING OVER hashTags and removing duplicates
+// ************************
+// const filterHashTags = (tags) => {
+//   const bannedHashTags = new Set(['nofilter', 'justsaying', 'winning', 'yolo']);
+//   return tags.filter((tag) => !bannedHashTags.has(tag));
+// };
 
-// {  first: 'Have',  second: 'Justine',  third: 'Adrine',  rest: ['Walker']}
-raceResults(['Have', 'Justine', 'Adrine', 'Walker']);
+// const haveTags = ['nofilter', 'justsaying', 'winning', 'yolo', 'swag', 'selfie', 'bestLife', 'Whatsapp']; filterHashTags(haveTags);
+// filterHashTags(haveTags);
+// (4)['swag', 'selfie', 'bestLife', 'Whatsapp']
+
+// // ************************
+// // USING INCLUDES
+// // ************************
+// const filterHashTags = (tags) => {
+//   const bannedHashTags = [
+//     'nofilter',
+//     'justsaying',
+//     'winning',
+//     'yolo'];
+//   return tags.filter((tag) => !bannedHashTags.includes(tag));
+// };
+
+// const haveTags = ['nofilter', 'justsaying',
+// 'winning', 'yolo', 'swag', 'selfie', 'bestLife', 'Whatsapp']; filterHashTags(haveTags);
+// filterHashTags(haveTags);
+// // (4)['swag', 'selfie', 'bestLife', 'Whatsapp']
+
+// const ages = [4, 15, 1, 12, 2, 3, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+// // new Set(ages);
+// // Set(9){4, 15, 1, 12, 2, 3, 9, 8, 7}
+
+// // Usinfg it again as an array
+// [...new Set(ages)];
