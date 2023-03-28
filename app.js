@@ -965,3 +965,19 @@
 
 // // Usinfg it again as an array
 // [...new Set(ages)];
+
+// What does the following code return?
+new Set([1, 1, 2, 2, 3, 4]);
+// {1, 2, 3, 4}
+
+// What does the following code return?
+[...new Set('referee')].join(''); // removes duplicates
+// 'ref'
+
+// What does the Map m look like after running the following code?
+const m = new Map();
+m.set([1, 2, 3], true);
+m.set([1, 2, 3], false);
+
+// 0: {Array(3) => true}
+// 1: {Array(3) => false}
