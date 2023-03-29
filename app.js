@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 // indUserByUserName
 // const users = [
 //   { username: 'mlewis' },
